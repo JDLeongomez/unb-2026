@@ -2,8 +2,7 @@
 
 ## Event
 
-**Opening Lecture & Conference**, Graduate Program in Behavioral Sciences, Institute of
-Psychology, University of Brasília (UnB), August 10–11, 2026.
+**Opening Lecture & Conference**, Graduate Program in Behavioral Sciences, Institute of Psychology, University of Brasília (UnB), August 10–11, 2026.
 
 - **Opening Lecture:** Afternoon of August 10, ~90 min — *Reproducibility and Open Science*
 - **Conference:** Morning of August 11, ~90 min — *Statistical Inference in Psychology*
