@@ -1,0 +1,25 @@
+project:
+  type: default
+  output-dir: _site
+  render:
+    - open-science/index.qmd
+    - statistical-inference/index.qmd
+
+lang: en-GB
+
+format:
+  clean-revealjs:
+    embed-resources: true
+    slide-number: true
+    show-slide-number: all
+    incremental: false
+    fig-align: center
+    fig-format: svg
+    code-line-numbers: false
+    highlight-style: github
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false

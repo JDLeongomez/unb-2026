@@ -1,0 +1,795 @@
+---
+title: "Open Science and Reproducibility"
+subtitle: "From the replication crisis to Registered Reports"
+author:
+  - name: Juan David Leongómez
+    orcid: 0000-0002-0092-6298
+    email: jleongomez@unbosque.edu.co
+    url: https://jdleongomez.info/es/
+    affiliations: Universidad El Bosque
+date: 2026-08-10
+bibliography: references.bib
+format:
+  clean-revealjs:
+    logo: img/logos.png
+    footer: "Juan David Leongómez, PhD, MSc — Open Science and Reproducibility, UnB 2026"
+---
+
+## 📲 Access the Slides Online {style="color:#f7766d;"}
+
+[jdleongomez.github.io/unb-2026/open-science/](https://jdleongomez.github.io/unb-2026/open-science/){style="font-size: 70%;"}
+
+------------------------------------------------------------------------
+
+## Lecture Outline
+
+1.  **What is Open Science?**\
+    Definitions, motivation, and the pillars of open research practice.
+
+2.  **The Reproducibility Crisis**\
+    The replication crisis, questionable research practices, and incentive structures.
+
+3.  **Preregistration**\
+    What it is, how it works, and why it improves research transparency.
+
+4.  **Registered Reports**\
+    A peer-review model that shifts the focus to study design and rigour.
+
+# Part 1: What is Open Science? {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### What do we mean by "Open Science"? {auto-animate="true"}
+
+**Open Science** is the movement to make the process and products of research (data, code, materials, and publications) openly accessible, transparent, and reusable.
+
+::: {.fragment .fade-in}
+Not a single practice, but a set of **principles** that can be applied at every stage of the research cycle: from planning a study to sharing its results.
+:::
+
+------------------------------------------------------------------------
+
+### Why does this matter? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+-   Science is meant to be **self-correcting**; but correction requires that others can check, reuse, and build on our work
+:::
+
+::: {.fragment .fade-in}
+-   Closed research is **inefficient**: it duplicates effort and slows discovery
+:::
+
+::: {.fragment .fade-in}
+-   Public funding and public trust create an **obligation** to share what we produce
+:::
+
+------------------------------------------------------------------------
+
+### The Pillars of Open Science
+
+::::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in}
+📂 **Open Data**: sharing the raw data behind a finding
+:::
+
+::: {.fragment .fade-in}
+💻 **Open Code**: sharing the analysis scripts that produced the results
+:::
+
+::: {.fragment .fade-in}
+📄 **Open Access**: publishing so anyone can read the paper, not just those at
+well-funded institutions
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment .fade-in}
+🧰 **Open Materials**: sharing stimuli, questionnaires, and protocols
+:::
+
+::: {.fragment .fade-in}
+📝 **Preregistration**: stating the plan *before* seeing the data
+:::
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### Why this matters for psychology and behavioural sciences
+
+::: {.fragment .fade-in}
+-   Psychology has been at the centre of the reproducibility conversation for over a decade
+:::
+
+::: {.fragment .fade-in}
+-   Our data are often costly to collect (human participants, time, ethics approval); reuse and transparency multiply their value
+:::
+
+::: {.fragment .fade-in}
+-   Open practices are increasingly **expected** by journals, funders, and evaluation committees
+:::
+
+::: {.fragment .fade-in}
+-   Understanding *why* this shift happened starts with the problem it was designed to fix
+:::
+
+# Part 2: The Reproducibility Crisis {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+###  {auto-animate="true"}
+
+**Q:** What percentage of published findings in psychology are statistically significant?
+
+------------------------------------------------------------------------
+
+###  {auto-animate="true"}
+
+**Q:** What percentage of published findings in psychology are statistically significant?\
+**A:** [96%]{style="font-size: 150%; color:#f7766d;"}
+
+------------------------------------------------------------------------
+
+###  {auto-animate="true"}
+
+**Q:** What percentage of published findings in psychology are statistically significant?\
+**A:** [96%]{style="font-size: 150%; color:#f7766d;"}
+
+![](img/p05.png)
+
+------------------------------------------------------------------------
+
+### 2.1 Can we trust the literature? {auto-animate="true"}
+
+There are two options:
+
+1.  We study effects with \>90% power and \>90% probability of being true.
+
+------------------------------------------------------------------------
+
+### 2.1 Can we trust the literature? {auto-animate="true"}
+
+There are two options:
+
+1.  We study effects with \>90% power and \>90% probability of being true.
+2.  There is **massive publication bias**.
+
+------------------------------------------------------------------------
+
+### 2.1 Can we trust the literature? {auto-animate="true"}
+
+2.  There is **massive publication bias** (across multiple disciplines).
+
+![](img/publication-bias.png){width="60%"}\
+[[Source](https://x.com/cremieuxrecueil/status/1772765486935056893)]{style="font-size: 50%;"}
+
+------------------------------------------------------------------------
+
+### 2.2 The significance filter {auto-animate="true"}
+
+![](img/significance-filter.png){width="80%"}
+
+------------------------------------------------------------------------
+
+### 2.2 The significance filter {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+1.1 million z-values, medical research (1976–2019)
+
+![](img/zvalues-medical.png){width="400"}
+
+[[van Zwet & Cator (2021)](https://doi.org/10.1111/stan.12241)]{style="font-size: 50%;"}
+:::
+
+::: {.column .fragment .fade-in width="50%"}
+<br>Also found in PLOS ONE
+
+![](img/plosone.png){width="400"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+1.  🧪 **P-hacking**
+
+::: {.fragment .fade-in}
+-   Trying multiple analyses until *p* \< .05
+-   Inflates the Type I error rate
+:::
+
+::: {.fragment .fade-in}
+2.  💡 **HARKing**
+:::
+
+::: {.fragment .fade-in}
+-   *H*ypothesising *A*fter the *R*esults are *K*nown
+-   Misrepresents an exploratory finding as a confirmed prediction
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+2.  💡 **HARKing**
+
+![](img/HARKing.jpeg)
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+3.  📦 **Publication Bias**
+
+::: {.fragment .fade-in}
+-   Journals prefer positive, "clean" results
+-   Null findings end up in the file drawer
+:::
+
+::: {.fragment .fade-in}
+4.  📏 **Low Statistical Power**
+:::
+
+::: {.fragment .fade-in}
+-   Small samples → more false negatives, and inflated effect sizes when significant
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+5.  🔧 **Flexible Analysis Pipelines**
+
+::: {.fragment .fade-in}
+-   Many defensible ways to analyse the same data → bias when not planned in advance
+:::
+
+::: {.fragment .fade-in}
+6.  🧠 **Lack of Preregistration**
+:::
+
+::: {.fragment .fade-in}
+-   Impossible to tell exploratory from confirmatory analyses after the fact
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+7.  🧾 **Inadequate Reporting**
+
+::: {.fragment .fade-in}
+-   Missing methods, materials, or software versions
+:::
+
+::: {.fragment .fade-in}
+8.  📊 **Selective Outcome Reporting**
+:::
+
+::: {.fragment .fade-in}
+-   Choosing which measures or time points to report *after* seeing the results
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+9.  🔄 **Data and Code Not Shared**
+
+::: {.fragment .fade-in}
+-   Blocks replication and independent error-checking
+:::
+
+::: {.fragment .fade-in}
+10. 🌐 **Cultural Incentives**
+:::
+
+::: {.fragment .fade-in}
+-   "Publish or perish" rewards novelty and quantity
+-   Replications and null results are undervalued
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Threats to Scientific Replicability {auto-animate="true"}
+
+The **four horsemen of the reproducibility apocalypse**
+
+![](img/4horsemen.jpg)
+
+# Part 3: Preregistration {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### 3.1 What is preregistration? {auto-animate="true"}
+
+**Preregistration** is the act of specifying your research plan *before* conducting the study.
+
+::: {.fragment .fade-in}
+![](img/cos.webp)
+:::
+
+------------------------------------------------------------------------
+
+### 3.1 What is preregistration? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+-   Define your research question and hypotheses **before** collecting data
+:::
+
+::: {.fragment .fade-in}
+-   Specify your analysis plan and study design in advance
+:::
+
+::: {.fragment .fade-in}
+-   Clearly link your hypotheses to your planned methods and outcomes
+:::
+
+------------------------------------------------------------------------
+
+### 3.1 Why preregister? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+-   Enhances **credibility** by making your intentions transparent
+:::
+
+::: {.fragment .fade-in}
+-   Helps you plan better and avoid analytical drift
+:::
+
+::: {.fragment .fade-in}
+-   Keeps all your design and analysis decisions in one place, even before data collection!
+:::
+
+------------------------------------------------------------------------
+
+### 3.1 Can I still explore my data? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+Absolutely! Preregistration doesn't ban exploration; it just draws a clear line between
+**confirmatory** and **exploratory** analyses
+:::
+
+::: {.fragment .fade-in}
+-   You can deviate from your plan. Just be upfront and explain why
+:::
+
+::: {.fragment .fade-in}
+-   The goal isn't rigidity, but **transparency**
+:::
+
+------------------------------------------------------------------------
+
+### 3.2 Key Benefits of Preregistration
+
+| Effect | Description |
+|----|----|
+| **Transparency** | Public hypotheses and plans [[Toth et al., 2019](https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT)] |
+| **Less Bias** | Encourages reporting of null results [[Marsden et al., 2022](https://doi.org/10.1111/add.15819)] |
+| **Clearer Claims** | Exploratory ≠ confirmatory [[Dewitte et al., 2021](https://doi.org/10.21428/1192f2f8.52d90db5)] |
+| **Better Quality** | Plans include power, exclusion criteria, etc. [[Ioannidis et al., 2022](https://doi.org/10.1016/j.mbs.2022.108782)] |
+| **Credibility** | Deviations from the plan are explicit [[Waldron et al., 2022](https://doi.org/10.1038/s41386-022-01418-x)] |
+| **Easier Review** | Reviewers can see the original plan [[Toth et al., 2019](https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT)] |
+
+------------------------------------------------------------------------
+
+### 3.3 How does it work in practice?
+
+::: {.fragment .fade-in}
+-   Write your hypotheses, design, and analysis plan in a structured template (e.g.
+    **AsPredicted**, or a full **OSF** template)
+:::
+
+::: {.fragment .fade-in}
+-   Submit it to a public registry (for example [**OSF Registries**](https://osf.io/registries))
+:::
+
+::: {.fragment .fade-in}
+-   The registry **time-stamps** the plan and issues a permanent, citable **DOI**
+:::
+
+::: {.fragment .fade-in}
+-   You can make it public immediately, or place it under a temporary **embargo**
+:::
+
+::: {.fragment .fade-in}
+-   Only *then* do you collect your data
+:::
+
+------------------------------------------------------------------------
+
+### 3.4 Preregistration vs. Registered Reports {.center background-color="#1A1A2E"}
+
+::: {style="font-size: 90%;"}
+This distinction trips people up constantly: here it is, side by side.
+:::
+
+::::: columns
+::: {.column width="50%"}
+**Preregistration**
+
+::: {.fragment .fade-in}
+-   You register your plan yourself
+:::
+
+::: {.fragment .fade-in}
+-   **No peer review** of the plan before data collection
+:::
+
+::: {.fragment .fade-in}
+-   Publication is **not guaranteed**: you still submit and compete after the study is done
+:::
+
+::: {.fragment .fade-in}
+-   A record that keeps you honest and makes deviations visible
+:::
+:::
+
+::: {.column width="50%"}
+**Registered Reports**
+
+::: {.fragment .fade-in}
+-   The plan is **peer-reviewed** by a journal or platform
+:::
+
+::: {.fragment .fade-in}
+-   Reviewers can improve the design **before** data exist
+:::
+
+::: {.fragment .fade-in}
+-   Publication is **provisionally guaranteed** if the plan is followed
+    (in-principle acceptance)
+:::
+
+::: {.fragment .fade-in}
+-   A publishing *format*, built on top of preregistration
+:::
+:::
+:::::
+
+::: {.fragment .fade-in}
+[Every Registered Report is preregistered. Not every preregistration becomes a Registered
+Report.]{style="font-size: 80%;"}
+:::
+
+------------------------------------------------------------------------
+
+### 3.5 Limitations & Considerations
+
+::: {.fragment .fade-in}
+-   Not a cure-all: vague preregistrations still allow bias
+    [[Waldron et al., 2022](https://doi.org/10.1038/s41386-022-01418-x)]
+:::
+
+::: {.fragment .fade-in}
+-   Some concerns: added bureaucracy, misuse, or an overly rigid view of exploratory analysis
+    [[Toth et al., 2019](https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT)]
+:::
+
+::: {.fragment .fade-in}
+-   Not every research type benefits equally, but the practice is broadly beneficial
+    [[Dewitte et al., 2021](https://doi.org/10.21428/1192f2f8.52d90db5)]
+:::
+
+# Part 4: Registered Reports {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### 4.1 How Registered Reports differ (reiterated) {auto-animate="true"}
+
+::: {.fragment .fade-in}
+-   Peer review happens **before** data collection, not after
+:::
+
+::: {.fragment .fade-in}
+-   If accepted in principle, publication is guaranteed regardless of the results
+:::
+
+::: {.fragment .fade-in}
+-   Because methods are peer-reviewed up front, designs tend to be **stronger**
+:::
+
+------------------------------------------------------------------------
+
+### 4.2 The Registered Reports pipeline
+
+::::: columns
+::: {.column width="33%" .fragment .fade-in}
+**Stage 1**
+
+Submit introduction, hypotheses, and methods (*before* collecting data)
+:::
+
+::: {.column width="33%" .fragment .fade-in}
+**In-Principle Acceptance (IPA)**
+
+Reviewers evaluate the *plan*. If sound, the journal commits to publish
+:::
+
+::: {.column width="33%" .fragment .fade-in}
+**Stage 2**
+
+Collect the data, run the pre-registered analyses, and submit the full report
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### 4.3 What goes into a Stage 1 submission? {auto-animate="true"}
+
+::: {style="font-size: 90%;"}
+Almost every RR template (PCI RR included) asks you to fill in some version of the same
+**design table**. Everything in it is written **before** you collect a single data point.
+:::
+
+------------------------------------------------------------------------
+
+### 4.3 The design table {auto-animate="true"}
+
+::: {style="font-size: 80%;"}
+| Component | What you specify |
+|----|----|
+| **Question** | The research question, stated precisely enough to be testable |
+| **Hypothesis** | The specific, directional prediction(s) you are testing |
+| **Sampling Plan** | How the data will be collected, and a justified sample size (e.g. an *a priori* power analysis) |
+| **Analysis Plan** | The exact statistical test(s), and the criteria that would count as support or non-support |
+| **Rationale for the test's sensitivity** | Why this design and sample size are sensitive enough to actually detect the effect, if it exists |
+| **Interpretation given different outcomes** | What each possible result — supportive, non-supportive, ambiguous — would mean, decided *before* seeing the data |
+| **Theory that could be shown wrong** | Which theoretical claim the outcomes could genuinely falsify — a real test needs a real chance of failing |
+:::
+
+::: {.fragment .fade-in style="font-size: 85%;"}
+This is what reviewers evaluate at Stage 1: not whether the result will be "interesting", but
+whether the plan is **sound** — and whether it could actually prove the theory wrong.
+:::
+
+------------------------------------------------------------------------
+
+### 4.3 The design table, as PCI RR asks for it {auto-animate="true"}
+
+![](img/PCIRR-designtable.jpeg){width="100%"}
+
+[Source: [PCI Registered Reports](https://rr.peercommunityin.org) — Stage 1 submission
+template]{style="font-size: 50%;"}
+
+------------------------------------------------------------------------
+
+### 4.4 Key Benefits
+
+| Effect | Description |
+|----|----|
+| **Reduces Publication Bias** | Acceptance is based on design, not results [[Chambers & Tzavella, 2021](https://doi.org/10.1038/s41562-021-01193-7)] |
+| **Methodological Rigour** | Early peer review strengthens design and analysis plans [[Soderberg et al., 2021](https://doi.org/10.1038/s41562-021-01142-4)] |
+| **Transparency** | Protocols are pre-specified and openly available [[Nosek et al., 2014](https://doi.org/10.1027/1864-9335/A000192)] |
+| **Reduces Questionable Practices** | Limits p-hacking and HARKing [[Lakens et al., 2024](https://doi.org/10.1080/2833373x.2024.2376046)] |
+| **Constructive Early Feedback** | Expert input on design *before* data collection [[Kiyonaga et al., 2019](https://doi.org/10.1016/j.tins.2019.07.003)] |
+| **Values Null Results** | Studies are published regardless of outcome [[Chambers et al., 2020](https://doi.org/10.1038/s41562-021-01193-7)] |
+
+------------------------------------------------------------------------
+
+### 4.5 The PCI RR model {auto-animate="true"}
+
+![](img/pci-rr-logo.png){width="70%"}
+
+------------------------------------------------------------------------
+
+### 4.5 The PCI RR model {auto-animate="true"}
+
+::: {style="font-size: 75%;"}
+**Peer Community In Registered Reports (PCI RR)** is a free, non-profit platform for reviewing
+and recommending Registered Reports.
+:::
+
+::: {.fragment .fade-in style="font-size: 75%;"}
+-   Authors submit a Stage 1 manuscript → receive peer review → upon **in-principle
+    acceptance**, they can:
+:::
+
+::: {.fragment .fade-in style="font-size: 75%;"}
+-   Publish the Stage 2 report in any of **100+ PCI RR-friendly journals**, or
+:::
+
+::: {.fragment .fade-in style="font-size: 75%;"}
+-   Simply use the PCI RR recommendation itself (free and citable)
+:::
+
+::: {.fragment .fade-in style="font-size: 75%;"}
+-   Ideal if you want a **journal-agnostic** process, more control over where you publish,
+    and fully **transparent, open peer review**
+:::
+
+------------------------------------------------------------------------
+
+### 4.5 The PCI RR model — the full process {auto-animate="true"}
+
+![](img/PCIRR-process.jpeg){width="95%"}
+
+::: {style="font-size: 60%;"}
+Note the two checkpoints where a submission can fail to advance (Stage 1 and Stage 2 criteria)
+— peer review is real, not a formality. Once recommended, the preprint is a valid, citable
+output on its own, even before (or instead of) journal submission.
+:::
+
+------------------------------------------------------------------------
+
+### 4.6 Why this is especially valuable for grad students
+
+::: {.fragment .fade-in}
+-   **No article processing charge (APC)** through the PCI RR recommendation route
+:::
+
+::: {.fragment .fade-in}
+-   Publication is essentially **guaranteed** once the plan is accepted, regardless of
+    whether the results are "exciting"
+:::
+
+::: {.fragment .fade-in}
+-   Expert peer review improves your **design** while you can still change it, not after
+    the data are already collected
+:::
+
+::: {.fragment .fade-in}
+-   Reduces the pressure to produce a significant result to be publishable
+:::
+
+------------------------------------------------------------------------
+
+### 4.7 Real-World Adoption
+
+::: {.fragment .fade-in}
+-   ✅ Over **300 journals** now offer Registered Reports
+:::
+
+::: {.fragment .fade-in}
+-   🧪 Used across disciplines: **psychology**, **ecology**, **medicine**, **economics**,
+    and more
+:::
+
+::: {.fragment .fade-in}
+-   💬 Growing support from funders and institutions
+:::
+
+::: {.fragment .fade-in}
+-   🌍 PCI RR offers a global, open-access alternative to journal-based review
+:::
+
+[Sources: cos.io, PCI RR, [Chambers & Tzavella, 2021](https://doi.org/10.1038/s41562-021-01193-7)]{style="font-size: 60%;"}
+
+------------------------------------------------------------------------
+
+### 4.7 Real-World Adoption: the effect on the record
+
+::::: columns
+::: {.column .fragment .fade-in width="50%"}
+![](img/rr-effect-1.png){width="400"}
+:::
+
+::: {.column .fragment .fade-in width="50%"}
+![](img/rr-effect-2.png){width="400"}\
+[[Scheel et al., 2021](https://doi.org/10.1177/25152459211007467)]{style="font-size: 50%;"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### 4.8 Are Registered Reports Always Appropriate?
+
+::: {.fragment .fade-in}
+-   Not ideal for purely **exploratory** or **rapid-response** studies
+:::
+
+::: {.fragment .fade-in}
+-   Adds planning time and a peer-review step before data collection begins
+:::
+
+::: {.fragment .fade-in}
+-   But most **confirmatory** studies (the majority of grad-student theses) benefit from
+    this model
+:::
+
+------------------------------------------------------------------------
+
+### 4.9 What if I already have some data?
+
+::: {.fragment .fade-in}
+-   PCI RR recognises a range of **bias-control levels**, not just brand-new data — secondary
+    analyses of existing data are still eligible
+:::
+
+::: {.fragment .fade-in}
+-   The less "untouched" your data are, the more safeguards you need (e.g. a blinded analyst,
+    a stricter statistical threshold) to reach a given level — but it's still possible
+:::
+
+::: {.fragment .fade-in}
+-   Plan your study and submit **before collecting any data**, and you automatically qualify
+    for the **highest level** — the strongest form of evidence this model can produce
+:::
+
+------------------------------------------------------------------------
+
+### 4.9 Levels of bias control recognised by PCI RR
+
+![](img/bias_control_taxon.jpeg){width="85%"}
+
+[Source: [PCI Registered Reports](https://rr.peercommunityin.org) — for reference when you're
+ready to submit]{style="font-size: 50%;"}
+
+# Closing: How to Start {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### Practical First Steps
+
+::: {.fragment .fade-in}
+1.  Pick a study you're planning that tests a clear hypothesis
+:::
+
+::: {.fragment .fade-in}
+2.  Fill in a **design table** for it — Question, Hypothesis, Sampling Plan, Analysis Plan,
+    and Interpretation for each outcome — *before* collecting data (see §4.3)
+:::
+
+::: {.fragment .fade-in}
+3.  Try a simple preregistration first (e.g. **AsPredicted**, via OSF)
+:::
+
+::: {.fragment .fade-in}
+4.  For your next confirmatory study, consider submitting a Stage 1 Registered Report to
+    [PCI RR](https://rr.peercommunityin.org)
+:::
+
+::: {.fragment .fade-in}
+5.  Ask your supervisor or lab whether preregistration could become a standard step in
+    your group's workflow
+:::
+
+------------------------------------------------------------------------
+
+### Key Resources
+
+<img src="img/osf-logo.png" height="80"/>&nbsp;&nbsp;&nbsp;<img src="img/pci-rr-logo.png" height="80"/>
+
+-   **OSF Registries**: <https://osf.io/registries>
+-   **PCI Registered Reports**: <https://rr.peercommunityin.org>
+-   **Center for Open Science**: <https://www.cos.io>
+
+------------------------------------------------------------------------
+
+## Summary
+
+-   Many threats to replicability are **systemic, but solvable**
+-   **Preregistration** helps you plan better, interpret results honestly, and build
+    credibility
+-   **Registered Reports** realign incentives and put peer review where it can do the most
+    good: before the data exist
+-   Tools like OSF and PCI RR make both accessible and free
+
+------------------------------------------------------------------------
+
+## Questions? {.center}
+
+Thank you for your attention! Happy to discuss, critique, or hear about your own experience
+with these practices.
+
+------------------------------------------------------------------------
+
+## Thank you! {.center}
+
+::::: columns
+::: {.column width="50%"}
+![](img/jdl_qr.png){width="60%"}
+:::
+
+::: {.column width="50%"}
+<br><br>**Juan David Leongómez** [PhD, MSc]{style="font-size: 50%;"}<br>
+[jleongomez\@unbosque.edu.co](mailto:jleongomez@unbosque.edu.co){style="font-size: 70%;"}
+:::
+:::::

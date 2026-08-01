@@ -1,0 +1,664 @@
+---
+title: "Statistical Inference in Psychology"
+subtitle: "Three frameworks, one question"
+author:
+  - name: Juan David Leongómez
+    orcid: 0000-0002-0092-6298
+    email: jleongomez@unbosque.edu.co
+    url: https://jdleongomez.info/es/
+    affiliations: Universidad El Bosque
+date: 2026-08-11
+format:
+  clean-revealjs:
+    logo: img/logos.png
+    footer: "Juan David Leongómez, PhD, MSc — Statistical Inference, UnB 2026"
+    incremental: true
+    width: 1280
+    height: 720
+    margin: 0.08
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+
+n         <- 20
+k         <- 14
+theta_mle <- k / n
+theta_seq <- seq(0.001, 0.999, length.out = 2000)
+
+col_freq  <- "#C0392B"
+col_like  <- "#2471A3"
+col_bayes <- "#1E8449"
+col_prior <- "#AAB7B8"
+
+base_theme <- theme_minimal(base_size = 16) +
+  theme(
+    plot.title       = element_text(face = "bold", size = 18),
+    plot.subtitle    = element_text(size = 13, color = "grey40"),
+    legend.position  = "bottom",
+    legend.text      = element_text(size = 13),
+    axis.title       = element_text(size = 14),
+    axis.text        = element_text(size = 12),
+    panel.grid.minor = element_blank()
+  )
+```
+
+# Part 1: What is Statistical Inference? {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+## The core problem
+
+::: {.incremental}
+-   We have **data** — the results of an experiment, a survey, an observation
+-   We want to say something about **reality** — about a population, a mechanism, a general
+    truth beyond just our sample
+-   The bridge between the two is **statistical inference**
+:::
+
+------------------------------------------------------------------------
+
+## A coin, a parameter
+
+::: {.incremental}
+-   Flip a coin. There are two possible outcomes: **heads** or **tails**
+-   Call **θ** (*theta*) the probability of getting heads on a single flip
+-   If the coin is fair: θ = 0.5. If it is biased towards heads: θ > 0.5
+-   θ is a **parameter**: a fixed number describing a property of the world
+:::
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+In statistics, **parameters** are the values we want to know. **Data** are what we observe.
+**Inference** is the bridge between the two.
+:::
+
+------------------------------------------------------------------------
+
+## What happens if we repeat the experiment?
+
+::: {.incremental}
+-   Suppose θ = 0.5 (a perfectly fair coin)
+-   You flip the coin **20 times** and count how many heads you get
+-   If you repeated that experiment thousands of times, which outcomes would be most common?
+:::
+
+. . .
+
+```{r fig-binom-prob}
+#| fig-height: 3.5
+tibble(x = 0:n) |>
+  mutate(prob = dbinom(x, n, 0.5)) |>
+  ggplot(aes(x = x, y = prob)) +
+  geom_col(width = 0.7, fill = "#5D6D7E", color = "white", linewidth = 0.3) +
+  geom_vline(xintercept = 10, linetype = "dashed", color = "grey30",
+             linewidth = 0.8, alpha = 0.6) +
+  annotate("text", x = 11, y = 0.165, label = "most likely value: 10",
+           color = "grey30", size = 4, hjust = 0) +
+  scale_x_continuous(breaks = seq(0, n, 2)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(
+    title    = "Binomial distribution: θ = 0.5, n = 20 flips",
+    subtitle = "Theoretical probability of each possible number of heads",
+    x = "Number of heads",
+    y = "Probability"
+  ) +
+  base_theme
+```
+
+::: {.fragment}
+This is a **probability distribution**: it tells us which outcomes to expect *if we already
+knew* θ. But the real problem runs the other way: we observe the data and want to
+**infer θ**.
+:::
+
+------------------------------------------------------------------------
+
+## From parameter to data... and back
+
+::: {.incremental}
+-   **Probability** (forwards): if I know θ = 0.5, I can predict the distribution of outcomes
+-   **Inference** (backwards): I observe the data and want to estimate θ
+-   We flip the coin **20 times** and get **14 heads**
+-   Is this coin fair? What is the value of θ?
+:::
+
+. . .
+
+<br>
+
+| Framework | Central question |
+|----|----|
+| **Frequentist** | How unusual are these data if θ = 0.5? |
+| **Likelihood** | Which value of θ makes these data most plausible? |
+| **Bayesian** | What should I believe about θ, having seen the data? |
+
+# Part 2: Frequentist Inference {background-color="#2c3e50"}
+
+<!-- This section will draw on a separate PowerPoint (to be provided) and needs significant
+     expansion beyond the source material. Left as a skeleton for now.
+     Cover:
+     - Probability as long-run frequency
+     - The logic of hypothesis testing: P(data | H0), not P(H0 | data)
+     - Null hypothesis and the null distribution
+     - The p-value: what it is and — critically — what it is not
+     - Type I and Type II errors (alpha and beta), and their consequences
+     - Statistical power
+     - Confidence intervals: correct and incorrect interpretations
+     - Apply all of this to the coin example -->
+
+## Probability as long-run frequency
+
+## The logic of hypothesis testing
+
+<!-- P(data | H0), not P(H0 | data) -->
+
+## The null hypothesis and the null distribution
+
+## The p-value: what it is
+
+## The p-value: what it is *not*
+
+## Type I and Type II errors
+
+## Statistical power
+
+## Confidence intervals: correct and incorrect interpretations
+
+## Back to the coin: a frequentist answer
+
+# Part 3: Likelihood Inference {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+## What is likelihood?
+
+::: {.incremental}
+-   Instead of asking *"how unusual are my data?"*, we ask: **which value of θ makes the
+    observed data most probable?**
+-   The **likelihood** ($L$) of a value of θ, given the data, is *the probability of
+    observing that data if θ took that value*
+-   For binomial data: $L(\theta) = \binom{n}{k}\,\theta^k\,(1-\theta)^{n-k}$
+:::
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+**$L(\theta)$** is not the probability that θ is true. It is the probability of the
+**data**, evaluated at each possible value of θ. *"θ = 0.7 is more likely than θ = 0.5"*
+means the observed data would be more probable if θ were 0.7 than if it were 0.5.
+:::
+
+------------------------------------------------------------------------
+
+## The likelihood curve
+
+```{r fig-like-intro}
+#| fig-height: 4.2
+H0 <- 0.50
+H1 <- k / n
+
+like_df <- tibble(theta = theta_seq, like = dbinom(k, n, theta_seq))
+p_at_mle <- dbinom(k, n, H1)
+
+ggplot(like_df, aes(x = theta, y = like)) +
+  geom_line(color = col_like, linewidth = 1.3) +
+  geom_vline(xintercept = H1, linetype = "dashed", color = col_like,
+             linewidth = 0.9, alpha = 0.7) +
+  annotate("point", x = H1, y = p_at_mle, size = 4, color = col_like) +
+  annotate("text", x = H1 + 0.02, y = p_at_mle * 0.72,
+           label = sprintf("MLE: θ̂ = %.2f\nL = %.4f\n(peak of the curve)", H1, p_at_mle),
+           color = col_like, size = 4, hjust = 0, fontface = "bold") +
+  annotate("text", x = 0.03, y = p_at_mle * 0.85,
+           label = sprintf("If θ = 0.7:\nP(14 heads in 20) = %.4f", p_at_mle),
+           color = "grey30", size = 3.8, hjust = 0) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  labs(
+    title    = sprintf("L(θ | %d heads in %d flips)", k, n),
+    subtitle = "Each point = P(observing 14 heads in 20 flips) if θ took that value",
+    x = "θ (probability of heads)",
+    y = "Likelihood  L(θ)"
+  ) +
+  base_theme
+```
+
+------------------------------------------------------------------------
+
+## Comparing hypotheses: the likelihood ratio
+
+::: {.incremental}
+-   The **likelihood ratio** (LR) compares two hypotheses:
+
+$$LR = \frac{L(\theta_1 \mid \text{data})}{L(\theta_0 \mid \text{data})} = \frac{P(\text{data} \mid \theta_1)}{P(\text{data} \mid \theta_0)}$$
+
+-   LR = 1 → both hypotheses are equally compatible with the data
+-   LR = 5 → H₁ is 5 times more compatible with the data than H₀
+-   LR = 0.2 → H₀ is more compatible (5 times) than H₁
+:::
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+**When is the evidence strong enough?** Rough benchmarks (Royall, 1997):
+
+| LR | Interpretation |
+|:--:|----|
+| 1 – 3 | Weak or anecdotal evidence |
+| 3 – 8 | Moderate evidence |
+| 8 – 32 | Strong evidence |
+| \> 32 | Very strong evidence |
+:::
+
+------------------------------------------------------------------------
+
+## Likelihood result
+
+```{r fig-likelihood-result}
+#| fig-height: 4.3
+LR <- dbinom(k, n, H1) / dbinom(k, n, H0)
+
+pts <- tibble(
+  theta = c(H0, H1),
+  like  = c(dbinom(k, n, H0), dbinom(k, n, H1)),
+  label = c(sprintf("H₀: θ = %.1f", H0),
+            sprintf("H₁: θ = %.2f  (MLE)", H1))
+)
+
+ggplot(like_df, aes(x = theta, y = like)) +
+  geom_line(color = col_like, linewidth = 1.2) +
+  geom_segment(aes(x = H0, xend = H1,
+                   y = dbinom(k, n, H0), yend = dbinom(k, n, H0)),
+               linetype = "dashed", color = "grey40", linewidth = 0.8) +
+  geom_segment(aes(x = H1, xend = H1,
+                   y = dbinom(k, n, H0), yend = dbinom(k, n, H1)),
+               linetype = "dashed", color = "grey40", linewidth = 0.8) +
+  annotate("rect",
+           xmin = H1 - 0.006, xmax = H1 + 0.006,
+           ymin = dbinom(k, n, H0), ymax = dbinom(k, n, H1),
+           fill = col_like, alpha = 0.85) +
+  geom_point(data = pts, aes(x = theta, y = like),
+             size = 4, color = "grey20") +
+  geom_text(data = pts, aes(x = theta, y = like, label = label),
+            hjust = c(1.08, -0.06), vjust = 0.4, size = 4.2) +
+  annotate("text",
+           x = H1 + 0.075,
+           y = (dbinom(k, n, H0) + dbinom(k, n, H1)) / 2,
+           label = sprintf("LR = %.1f×", LR),
+           color = col_like, fontface = "bold", size = 5.5) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  labs(
+    title    = "Likelihood ratio: H₁ vs. H₀",
+    subtitle = sprintf(
+      "LR = %.1f× → moderate evidence in favour of θ = %.2f over θ = %.1f",
+      LR, H1, H0),
+    x = "θ (probability of heads)",
+    y = "Likelihood  L(θ)"
+  ) +
+  base_theme
+```
+
+::: {.fragment}
+LR = `r round(LR, 1)` falls in the **moderate** range (3–8). With 100 flips and the same
+proportion (70 heads), LR would exceed 10⁶ — evidence accumulates quickly as *n* grows.
+:::
+
+------------------------------------------------------------------------
+
+## What likelihood does (and does not) tell us
+
+::: {.incremental}
+-   It tells us how well **different values of θ** are supported, relative to each other, by
+    the data we actually observed
+-   It does **not** give the probability that any particular θ is true
+-   It says nothing about values of θ we didn't compare — it is inherently **relative**
+-   It does not require specifying a null hypothesis, and it does not use a prior
+:::
+
+# Part 4: Bayesian Inference {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+## Bayesian logic
+
+::: {.incremental}
+-   The approaches above treat θ as fixed (even if unknown)
+-   The Bayesian approach goes one step further: **θ has a probability distribution**
+-   This lets us incorporate **prior knowledge** before seeing the data
+-   And update that knowledge with the observed evidence → the ***posterior***
+:::
+
+. . .
+
+$$\underbrace{P(\theta \mid \text{data})}_{\text{posterior}} \;\propto\; \underbrace{P(\text{data} \mid \theta)}_{\text{likelihood}} \;\times\; \underbrace{P(\theta)}_{\text{prior}}$$
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+**∝** means *"proportional to"*: the posterior has the same shape as the product of the
+likelihood and the prior, just rescaled so that the probabilities over θ sum to 1.
+:::
+
+------------------------------------------------------------------------
+
+## The three ingredients
+
+::: {.incremental}
+-   **Prior** $P(\theta)$: what we believe about θ *before* seeing the data. Can be vague
+    (*"I have no idea"*) or informative (*"the coin should be fair"*)
+
+-   **Likelihood** $P(\text{data} \mid \theta)$: the same function we already saw — how
+    probable the data are for each value of θ
+
+-   **Posterior** $P(\theta \mid \text{data})$: our *updated* belief about θ after combining
+    prior and data
+:::
+
+. . .
+
+::: {.callout-note appearance="minimal"}
+For binomial data with a **Beta(a, b)** prior, the posterior is exactly **Beta(a + k, b + n
+− k)**. Here **k** = observed heads, **n** = total flips, and **a** and **b** are the prior's
+parameters — interpretable as "imaginary prior heads" and "imaginary prior tails": the larger
+they are, the stronger (more informative) the prior. The data simply *add* observations to the
+prior — an exact, analytical update of our belief.
+:::
+
+------------------------------------------------------------------------
+
+## Step 1: The prior
+
+```{r fig-bayes-1}
+#| fig-height: 4.0
+a <- 3; b <- 3
+a_post <- a + k
+b_post <- b + (n - k)
+post_mean <- a_post / (a_post + b_post)
+ci_low    <- qbeta(0.025, a_post, b_post)
+ci_high   <- qbeta(0.975, a_post, b_post)
+
+like_raw   <- dbinom(k, n, theta_seq)
+post_vals  <- dbeta(theta_seq, a_post, b_post)
+prior_vals <- dbeta(theta_seq, a, b)
+scale_f    <- max(post_vals) / max(like_raw)
+ylim_max   <- max(post_vals) * 1.1
+
+tibble(theta = theta_seq, dens = prior_vals) |>
+  ggplot(aes(x = theta, y = dens)) +
+  geom_line(color = col_prior, linewidth = 1.4) +
+  geom_ribbon(aes(ymin = 0, ymax = dens), fill = col_prior, alpha = 0.25) +
+  annotate("text", x = 0.5, y = max(prior_vals) * 0.85,
+           label = sprintf("Prior Beta(%d,%d)\nmean = %.1f", a, b, a/(a+b)),
+           color = "grey40", size = 4.5, hjust = 0.5) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  coord_cartesian(ylim = c(0, ylim_max)) +
+  labs(
+    title    = "Prior: initial belief about θ",
+    subtitle = sprintf("Beta(%d,%d): θ could be anything, but probably close to 0.5", a, b),
+    x = "θ (probability of heads)", y = "Density"
+  ) +
+  base_theme
+```
+
+------------------------------------------------------------------------
+
+## Step 2: The data (likelihood)
+
+```{r fig-bayes-2}
+#| fig-height: 4.0
+tibble(
+  theta = theta_seq,
+  Prior = prior_vals,
+  Data  = like_raw * scale_f
+) |>
+  pivot_longer(-theta, names_to = "dist", values_to = "dens") |>
+  mutate(dist = factor(dist, c("Prior", "Data"))) |>
+  ggplot(aes(x = theta, y = dens, color = dist, linetype = dist)) +
+  geom_line(linewidth = 1.2) +
+  scale_color_manual(
+    values = c("Prior" = col_prior, "Data" = "grey30"),
+    labels = c("Prior" = sprintf("Prior Beta(%d,%d)", a, b),
+               "Data" = sprintf("Data: %d heads in %d flips (rescaled)", k, n)),
+    name = NULL
+  ) +
+  scale_linetype_manual(
+    values = c("Prior" = "solid", "Data" = "dotted"),
+    labels = c("Prior" = sprintf("Prior Beta(%d,%d)", a, b),
+               "Data" = sprintf("Data: %d heads in %d flips (rescaled)", k, n)),
+    name = NULL
+  ) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  coord_cartesian(ylim = c(0, ylim_max)) +
+  labs(
+    title    = "Overlaying the likelihood",
+    subtitle = "The data curve concentrates the evidence around θ̂ = 0.70",
+    x = "θ (probability of heads)", y = "Density"
+  ) +
+  base_theme
+```
+
+------------------------------------------------------------------------
+
+## Step 3: The posterior
+
+```{r fig-bayes-3}
+#| fig-height: 3.8
+tibble(
+  theta = theta_seq,
+  Prior = prior_vals,
+  Data  = like_raw * scale_f,
+  Posterior = post_vals
+) |>
+  pivot_longer(-theta, names_to = "dist", values_to = "dens") |>
+  mutate(dist = factor(dist, c("Prior", "Data", "Posterior"))) |>
+  ggplot(aes(x = theta, y = dens, color = dist, linetype = dist)) +
+  geom_ribbon(
+    data  = ~ filter(.x, dist == "Posterior"),
+    aes(ymin = 0, ymax = dens),
+    fill = col_bayes, alpha = 0.12, color = NA
+  ) +
+  geom_line(linewidth = 1.15) +
+  geom_vline(xintercept = post_mean, linetype = "dashed",
+             color = col_bayes, linewidth = 0.8, alpha = 0.8) +
+  annotate("text", x = post_mean + 0.02, y = max(post_vals) * 0.55,
+           label = sprintf("posterior\nmean\n= %.2f", post_mean),
+           color = col_bayes, size = 3.8, hjust = 0) +
+  annotate("text", x = 0.03, y = max(post_vals) * 0.96,
+           label = sprintf("95%% CrI: [%.2f, %.2f]", ci_low, ci_high),
+           color = col_bayes, size = 3.8, hjust = 0) +
+  scale_color_manual(
+    values = c("Prior" = col_prior, "Data" = "grey30", "Posterior" = col_bayes),
+    name = NULL
+  ) +
+  scale_linetype_manual(
+    values = c("Prior" = "solid", "Data" = "dotted", "Posterior" = "solid"),
+    name = NULL
+  ) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  coord_cartesian(ylim = c(0, ylim_max)) +
+  labs(
+    title    = "Posterior: updated belief about θ",
+    subtitle = sprintf("Beta(%d,%d) + data → Posterior Beta(%d,%d) | the 95%% CrI is a direct probability statement about θ",
+                       a, b, a_post, b_post),
+    x = "θ (probability of heads)", y = "Density"
+  ) +
+  base_theme
+```
+
+------------------------------------------------------------------------
+
+## Credible intervals vs. confidence intervals
+
+::: {.incremental}
+-   A **95% credible interval** (Bayesian) means: given the model and prior, there is a 95%
+    probability that θ lies in this interval — a direct probability statement about the
+    parameter
+-   A **95% confidence interval** (frequentist) means: if we repeated the study many times,
+    95% of the intervals constructed this way would contain the true θ — it says nothing
+    about *this particular* interval
+-   The two often look numerically similar, but they answer **different questions**
+:::
+
+------------------------------------------------------------------------
+
+## How much does the prior matter?
+
+::: {.incremental}
+-   The prior reflects how much we already know *before* the data, and how hard that belief
+    is to move
+-   **Weak (vague) prior**: few assumptions → the data dominate quickly. *"I have no idea
+    whether this coin is fair"*
+-   **Moderate prior**: a reasonable belief, but open to change. *"It's probably a normal
+    coin, but it could be biased"*
+-   **Strong prior**: firm conviction that needs a lot of evidence to shift. *"This coin came
+    factory-calibrated: it's almost certainly fair"*
+:::
+
+. . .
+
+::: {.callout-tip appearance="minimal"}
+**Analogy**: think about how much evidence it would take to change these beliefs. 🪨
+*"Objects fall downward"*: an extremely strong prior — you'd need thousands of experiments.
+☕ *"I'll like this new coffee"*: a weak prior — one sip is enough. With enough data,
+reasonable priors **always converge to the same posterior**.
+:::
+
+------------------------------------------------------------------------
+
+## The prior matters more when data are scarce
+
+```{r fig-priors-comparados}
+#| fig-height: 4.0
+priors_comp <- tribble(
+  ~name,                    ~a,   ~b,
+  "Vague  Beta(1,1)",        1,    1,
+  "Moderate  Beta(3,3)",     3,    3,
+  "Strong  Beta(50,50)",    50,   50
+) |>
+  mutate(a_post = a + k, b_post = b + (n - k))
+
+priors_comp |>
+  select(name, a_post, b_post) |>
+  crossing(theta = theta_seq) |>
+  mutate(
+    post = dbeta(theta, a_post, b_post),
+    name = factor(name, priors_comp$name)
+  ) |>
+  ggplot(aes(x = theta, y = post, color = name, linetype = name)) +
+  geom_line(linewidth = 1.1) +
+  geom_vline(xintercept = theta_mle, linetype = "dashed",
+             color = "grey50", linewidth = 0.7, alpha = 0.7) +
+  annotate("text", x = theta_mle + 0.015, y = 1.0,
+           label = sprintf("MLE = %.2f", theta_mle),
+           color = "grey40", size = 3.8, hjust = 0) +
+  scale_color_manual(
+    values = c("grey60", col_bayes, "#8E44AD"),
+    name = "Prior"
+  ) +
+  scale_linetype_manual(
+    values = c("dashed", "solid", "dotdash"),
+    name = "Prior"
+  ) +
+  scale_x_continuous(breaks = seq(0, 1, 0.1)) +
+  labs(
+    title    = "Posteriors under different priors  (n = 20 flips)",
+    subtitle = "The strong prior Beta(50,50) resists the evidence; with n = 200 all three would converge",
+    x = "θ (probability of heads)", y = "Posterior density"
+  ) +
+  base_theme
+```
+
+# Part 5: Comparison and Closing {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+## The three frameworks, side by side
+
+<br>
+
+|  | Frequentist | Likelihood | Bayesian |
+|----|:--:|:--:|:--:|
+| What is θ? | Fixed, unknown | Fixed, unknown | Random variable |
+| Needs H₀? | **Yes** | No | No |
+| Needs a prior? | No | No | **Yes** |
+| Output | *p* + CI | LR + MLE | Posterior distribution |
+| Can it state P(θ \> 0.5)? | No | No | **Yes** |
+
+. . .
+
+<br>
+
+::: {.callout-tip appearance="minimal"}
+There is no single "correct" answer — each approach answers a **different question**. The
+right choice depends on context, goals, and disciplinary tradition.
+:::
+
+------------------------------------------------------------------------
+
+## When might each be more appropriate?
+
+::: {.incremental}
+-   **Frequentist**: well-established in regulated fields (e.g. clinical trials) where
+    standardised decision thresholds matter, and no strong prior information is available
+-   **Likelihood**: useful for directly comparing specific competing hypotheses, without
+    committing to a prior or a decision threshold
+-   **Bayesian**: valuable when prior knowledge exists and should be used, when you want a
+    direct probability statement about a parameter, or when making decisions under
+    uncertainty with small samples
+-   In practice, researchers often use more than one, because they answer complementary
+    questions
+:::
+
+------------------------------------------------------------------------
+
+## Take-home message {.center}
+
+These are **tools, not religions**.
+
+::: {.fragment}
+Understanding what each one can — and cannot — tell you is more useful than picking a side.
+:::
+
+------------------------------------------------------------------------
+
+## Further Reading
+
+<br>
+
+::: {.nonincremental}
+**Recommended** (compares the different approaches to inference very accessibly)
+
+-   Lakens, D. (2021). [*Improving Your Statistical Inferences*](https://lakens.github.io/statistical_inferences/) [free, online]
+
+**Specialised**
+
+-   **Frequentist**: any classic statistics textbook, e.g.
+    -   Gillard, J. (2020). [*A first course in statistical inference*](https://doi.org/10.1007/978-3-030-39561-2). Springer
+
+-   **Likelihood**:
+    -   Royall, R. (1997). [*Statistical Evidence: A Likelihood Paradigm*](https://www.taylorfrancis.com/books/mono/10.1201/9780203738665/statistical-evidence-tibshirani-richard-royall). Chapman & Hall
+
+-   **Bayesian**:
+    -   McElreath, R. (2020). [*Statistical Rethinking: A Bayesian Course with Examples in R and STAN*](https://www.taylorfrancis.com/books/mono/10.1201/9780429029608/statistical-rethinking-richard-mcelreath) (2nd ed.). CRC Press
+:::
+
+------------------------------------------------------------------------
+
+## Thank you! {.center auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+[![](img/logo_MetaCiencia.svg){fig-align="right" width="50%"}](https://jdleongomez.github.io/MetaCiencia/)
+:::
+
+::: {.column width="50%"}
+**Juan David Leongómez** [PhD, MSc]{style="font-size: 50%;"}<br>
+[jleongomez\@unbosque.edu.co](mailto:jleongomez@unbosque.edu.co){style="font-size: 70%;"}<br>
+[![](img/jdl_qr.png){width="55%"}](https://jdleongomez.info/es/)
+:::
+:::::

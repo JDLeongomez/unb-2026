@@ -1,0 +1,13 @@
+.quarto/
+/open-science/index.html
+/open-science/index_files/
+/statistical-inference/index.html
+/statistical-inference/index_files/
+/open-science/mathjax-config.js
+/statistical-inference/mathjax-config.js
+.DS_Store
+.cl*/
+
+/.quarto/
+**/*.quarto_ipynb
+/_site/
