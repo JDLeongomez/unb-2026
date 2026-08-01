@@ -28,5 +28,5 @@ renders both decks and deploys `_site/` to the `gh-pages` branch. In the repo's 
 set the source to "Deploy from a branch" → `gh-pages` → `/ (root)`. Once enabled, the decks are
 available at:
 
-- `https://<user>.github.io/unb-2026/open-science/`
-- `https://<user>.github.io/unb-2026/statistical-inference/`
+- `https://jdleongomez.github.io/unb-2026/open-science/`
+- `https://jdleongomez.github.io/unb-2026/statistical-inference/`
