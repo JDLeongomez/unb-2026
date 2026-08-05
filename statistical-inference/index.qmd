@@ -1,6 +1,6 @@
 ---
-title: "Statistical Inference in Psychology"
-subtitle: "Three frameworks, one question"
+title: "Statistical Inference"
+subtitle: "Three frameworks to answer a question"
 author:
   - name: Juan David Leongómez
     orcid: 0000-0002-0092-6298
@@ -12,7 +12,6 @@ format:
   clean-revealjs:
     logo: img/logos.png
     footer: "Juan David Leongómez, PhD, MSc — Statistical Inference, UnB 2026"
-    incremental: true
     width: 1280
     height: 720
     margin: 0.08

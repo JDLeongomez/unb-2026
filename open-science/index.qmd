@@ -17,11 +17,13 @@ format:
 
 ## 📲 Access the Slides Online {style="color:#f7766d;"}
 
+![](img/qr-open-science.svg)
+
 [jdleongomez.github.io/unb-2026/open-science/](https://jdleongomez.github.io/unb-2026/open-science/){style="font-size: 70%;"}
 
 ------------------------------------------------------------------------
 
-## Lecture Outline
+## Outline
 
 1.  **What is Open Science?**\
     Definitions, motivation, and the pillars of open research practice.

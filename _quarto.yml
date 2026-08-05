@@ -12,7 +12,9 @@ format:
     embed-resources: true
     slide-number: true
     show-slide-number: all
-    incremental: false
+    incremental: true
+    transition: slide
+    transition-speed: default
     fig-align: center
     fig-format: svg
     code-line-numbers: false
