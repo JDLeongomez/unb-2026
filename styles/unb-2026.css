@@ -1,0 +1,54 @@
+/* styles/unb-2026.css */
+
+/* Texto o palabras que quieres resaltar sin usar bold */
+.is-accent {
+    color: #13718c;
+    font-weight: 600;
+}
+
+/* Reveal en click, similar a un fragment pero cambia de color al aparecer */
+.accent-on-click {
+    opacity: 0.35;
+    transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+.accent-on-click.fragment.visible {
+    opacity: 1;
+    color: #13718c;
+}
+
+/* Etiquetas tipo "pill" para listas cortas (temas, herramientas, etc.) */
+.chip {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    margin: 0.2em;
+    border-radius: 999px;
+    background: rgba(247, 118, 109, 0.12);
+    border: 1px solid #13718c;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+/* Slide "poster": una frase grande, centrada, sin nada más alrededor */
+.poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.poster .overline {
+    font-size: 0.9em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    margin-bottom: 0.5em;
+}
+
+.poster .title {
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.2;
+}
