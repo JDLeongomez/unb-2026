@@ -36,7 +36,7 @@ etiqueta_B <- tibble(
   panel = "B",
   x = max(breaks) - 0.2,
   y = 19, # cerca de la parte alta del rango
-  label = "Estudios: 0 | P(|z|>1.96) ≈ 0% | +:0  -:0"
+  label = "Studies: 0 | P(|z|>1.96) ≈ 0% | +:0  -:0"
 )
 
 # Plot combinado (facetas A y B)
@@ -77,7 +77,7 @@ p_static <- ggplot() +
   # Estilo y textos (coherentes con tu animación)
   labs(
     title = "Sample variation with true effect = 0",
-    subtitle = "Panel A: population (ρ = 0) y subsample | Panel B: cumulative z histogram",
+    subtitle = "Panel A: population (ρ = 0) and subsample | Panel B: cumulative z histogram",
     x = x_lab, y = y_lab
   ) +
   theme_minimal(base_size = 14) +

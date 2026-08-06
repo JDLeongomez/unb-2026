@@ -19,14 +19,14 @@
 
 /* Etiquetas tipo "pill" para listas cortas (temas, herramientas, etc.) */
 .chip {
-    display: inline-block;
-    padding: 0.25em 0.75em;
-    margin: 0.2em;
-    border-radius: 999px;
-    background: rgba(247, 118, 109, 0.12);
-    border: 1px solid #13718c;
-    font-size: 0.8em;
-    white-space: nowrap;
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.2em;
+  border-radius: 999px;
+  background: rgba(19, 113, 140, 0.12);
+  border: 1px solid #13718c;
+  font-size: 0.8em;
+  white-space: nowrap;
 }
 
 /* Slide "poster": una frase grande, centrada, sin nada más alrededor */
@@ -51,4 +51,16 @@
     font-size: 2.2em;
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* ── Links en diapositivas ──────────────────────────────── */
+.reveal a {
+  color: #6B7280;
+  text-decoration: underline;
+  text-decoration-color: #b8bcc2;
+}
+
+.reveal a:hover {
+  color: #374151;
+  text-decoration-color: #374151;
 }

@@ -5,43 +5,436 @@ author:
   - name: Juan David Leongómez
     orcid: 0000-0002-0092-6298
     email: jleongomez@unbosque.edu.co
-    url: https://jdleongomez.info/es/
-    affiliations: Universidad El Bosque
+    url: https://jdleongomez.info/
+    affiliations:
+      - name: "<br>
+          [*CODEC: Cognitive and Behavioural Sciences*](hhttps://grupo-codec.netlify.app/)<br>
+          [*EvoCo: Human Behaviour and Evolution Lab*](https://jdleongomez.info/en/team/)<br>
+          Faculty of Psychology · Universidad El Bosque"
+
 date: 2026-08-10
 bibliography: references.bib
+csl: ../apa.csl
+lang: en-GB
+
 format:
-  clean-revealjs:
-    logo: img/logos.png
-    footer: "Juan David Leongómez, PhD, MSc — Open Science and Reproducibility, UnB 2026"
-    css: ../styles/unb-2026.css
+    clean-revealjs:
+        logo: img/logos.png
+        footer: |
+          <span style="font-size:70%;"><a href="https://jdleongomez.info/es/" target="_blank">
+          <strong>Juan David Leongómez</strong></a></span>
+          <span style="font-size:50%;">PhD, MSc</span><span style="font-size:70%;"> — Open Science and Reproducibility, UnB 2026</span>
+        css: ../styles/unb-2026.css 
 ---
 
-## 📲 Access the Slides Online {style="color:#f7766d;"}
+## 📲 Access the Slides Online
 
-![](img/qr-open-science.svg)
-
+::: {style="text-align: center;"}
+![](img/qr-open-science.svg){width="45%"}\
 [jdleongomez.github.io/unb-2026/open-science/](https://jdleongomez.github.io/unb-2026/open-science/){style="font-size: 70%;"}
+:::
 
 ------------------------------------------------------------------------
 
 ## Outline
 
-1.  **What is Open Science?**\
-    Definitions, motivation, and the pillars of open research practice.
-
-2.  **The Reproducibility Crisis**\
+1.  **The Reproducibility Crisis**\
     The replication crisis, questionable research practices, and incentive structures.
 
-3.  **A Global Challenge**\
-    Unequal access to reading and producing science, and where Brazil and Latin America stand..
-    
-4.  **Preregistration**\
-    What it is, how it works, and why it improves research transparency.
+2.  [**A Global Challenge**\
+    Unequal access to reading and producing science, and where Brazil and Latin America stand.]{.fragment}
 
-5.  **Registered Reports**\
-    A peer-review model that shifts the focus to study design and rigour.
+3.  [**What is Open Science?**\
+    Definitions, motivation, and the pillars of open research practice.]{.fragment}
 
-# Part 1: What is Open Science? {background-color="#2c3e50"}
+4.  [**Preregistration**\
+    What it is, how it works, and why it improves research transparency.]{.fragment}
+
+5.  [**Registered Reports**\
+    A peer-review model that shifts the focus to study design and rigour.]{.fragment}
+
+# Part 1: The Reproducibility Crisis {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### 1.0 How is scientific knowledge actually built? {auto-animate="true"}
+
+How do we know if two things are really related?
+
+::: {.fragment .fade-in style="margin-top: 30px; font-size: 0.8em;"}
+[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
+:::
+
+::: {.fragment .fade-in style="margin-top: 30px; font-size: 0.8em; text-align: center;"}
+![](img/cat.jpeg){width="22%"}\
+(this is Electra, my ["cat"]{.is-accent})
+:::
+
+------------------------------------------------------------------------
+
+### 1.0 How is scientific knowledge actually built? {auto-animate="true"}
+
+::: {style="font-size: 0.8em;"}
+[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
+:::
+
+![](img/variacion_muestral_base_estatica.png)
+
+------------------------------------------------------------------------
+
+### 1.0 How is scientific knowledge actually built? {auto-animate="true"}
+
+::: {style="font-size: 0.8em;"}
+[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
+:::
+
+![](img/simulacion_estudios_slow.gif)
+
+------------------------------------------------------------------------
+
+### 1.0 How is scientific knowledge actually built? {auto-animate="true"}
+
+::: {style="font-size: 0.8em;"}
+[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
+:::
+
+![](img/simulacion_estudios_fast.gif)
+
+------------------------------------------------------------------------
+
+### 1.0 What just happened? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+There is [no real relationship]{.is-accent} between these two variables
+:::
+
+::: {.fragment .fade-in}
+Yet, by chance alone, some simulated studies still come out "significant"
+:::
+
+::: {.fragment .fade-in style="font-size: 85%;"}
+Now imagine that only the "significant" ones get submitted, reviewed, and published
+:::
+
+------------------------------------------------------------------------
+
+### 1.0 Why is it so hard to produce knowledge we can trust? {auto-animate="true"}
+
+::: {style="text-align: center;"}
+![](img/p05.png)
+:::
+
+------------------------------------------------------------------------
+
+### 1.0 Why is it so hard to produce knowledge we can trust? {auto-animate="true"}
+
+::: {style="text-align: center;"}
+![](img/distribucion_pvals_poder.gif)
+:::
+
+------------------------------------------------------------------------
+
+### {auto-animate="true"}
+
+::: poster
+::: overline
+Q: **What percentage of published findings in psychology are statistically significant?**
+:::
+:::
+
+------------------------------------------------------------------------
+
+### {auto-animate="true"}
+
+::: poster
+::: overline
+Q: **What percentage of published findings in psychology are statistically significant?**
+:::
+
+::: title
+[96%]{.is-accent}
+:::
+:::
+
+------------------------------------------------------------------------
+
+### 1.1 Can we trust the literature? {auto-animate="true"}
+
+There are two options:
+
+1.  We study effects with \>90% power and \>90% probability of being true.
+
+------------------------------------------------------------------------
+
+### 1.1 Can we trust the literature? {auto-animate="true"}
+
+There are two options:
+
+1.  We study effects with \>90% power and \>90% probability of being true.
+2.  [There is massive publication bias.]{.fragment .accent-on-click}
+
+------------------------------------------------------------------------
+
+### 1.1 Can we trust the literature? {auto-animate="true"}
+
+2.  [There is massive publication bias]{.is-accent} (across multiple disciplines).
+
+![](img/publication-bias.png){width="60%"}\
+[[Source](https://x.com/cremieuxrecueil/status/1772765486935056893)]{style="font-size: 50%;"}
+
+------------------------------------------------------------------------
+
+### 1.2 The significance filter {auto-animate="true"}
+
+![](img/significance-filter.png){width="80%"}
+
+------------------------------------------------------------------------
+
+### 1.2 The significance filter {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+1.1 million z-values, medical research (1976–2019)
+
+![](img/zvalues-medical.png){width="400"}
+
+[[van Zwet & Cator (2021)](https://doi.org/10.1111/stan.12241)]{style="font-size: 50%;"}
+:::
+
+::: {.column .fragment .fade-in width="50%"}
+<br>Also found in PLOS ONE
+
+![](img/plosone.png){width="400"}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### 1.3 Ten threats, one root cause {auto-animate="true"}
+
+::: poster
+::: overline
+Where do false positives come from?
+:::
+::: title
+Almost every step of the pipeline can be [bent]{.is-accent} toward a "significant" result
+:::
+:::
+
+------------------------------------------------------------------------
+
+### 1.3 Ten threats, one root cause {auto-animate="true"}
+
+[🧪 P-hacking]{.chip} [💡 HARKing]{.chip} [📦 Publication Bias]{.chip} [📏 Low Power]{.chip} [🔧 Flexible Pipelines]{.chip} [🧠 No Preregistration]{.chip} [🧾 Poor Reporting]{.chip} [📊 Selective Reporting]{.chip} [🔄 Data/Code Not Shared]{.chip} [🌐 Cultural Incentives]{.chip}
+
+::: {.fragment .fade-in style="font-size: 80%; margin-top: 1em;"}
+Two of these deserve a closer look
+:::
+
+------------------------------------------------------------------------
+
+### 1.4 P-hacking {auto-animate="true"}
+
+::: {.fragment .fade-in}
+Trying multiple analyses until [*p* \< .05]{.is-accent}
+:::
+
+::: {.fragment .fade-in style="font-size: 90%;"}
+Every extra test, covariate, or exclusion rule you try (and don't report) inflates the real Type I error rate, silently
+:::
+
+------------------------------------------------------------------------
+
+### 1.5 HARKing {auto-animate="true"}
+
+*H*ypothesising *A*fter the *R*esults are *K*nown
+
+![](img/HARKing.jpeg)
+
+------------------------------------------------------------------------
+
+### 1.5 HARKing {auto-animate="true"}
+
+![](img/HARKing.jpeg)
+
+::: {.fragment .fade-in style="font-size: 85%;"}
+It turns an exploratory finding into something that [looks]{.is-accent} like a confirmed prediction
+:::
+
+------------------------------------------------------------------------
+
+### 1.6 The common thread {auto-animate="true"}
+
+::: poster
+::: overline
+It's not (only) bad actors
+:::
+
+::: title
+Most of this happens through [ordinary, well-intentioned]{.is-accent} choices, made *after* seeing the data
+:::
+:::
+
+------------------------------------------------------------------------
+
+### 1.6 The four horsemen of the reproducibility apocalypse {auto-animate="true"}
+
+![](img/4horsemen.jpg)
+
+# Part 2: A Global Challenge {background-color="#2c3e50"}
+
+------------------------------------------------------------------------
+
+### 2.1 It's not just about *replicating* findings {auto-animate="true"}
+
+::: {.fragment .fade-in}
+It's also about [who gets to read science, and who gets to produce it]{.is-accent}
+:::
+
+------------------------------------------------------------------------
+
+### 2.2 Unequal access to knowledge {auto-animate="true"}
+
+**Q:** How much does it typically cost to read a single paywalled article?
+
+------------------------------------------------------------------------
+
+### 2.2 Unequal access to knowledge {auto-animate="true"}
+
+**Q:** How much does it typically cost to read a single paywalled article?\
+**A:** [US$30–50]{style="font-size: 150%;" .is-accent}
+
+::: {.fragment .fade-in style="font-size: 80%;"}
+For a single paper. Not a subscription, not a journal, one article.
+:::
+
+------------------------------------------------------------------------
+
+### 2.2 Unequal access to knowledge {auto-animate="true"}
+
+![](img/nat-inaccesibility.webp){width="75%"}
+
+[Nature, on the cost of scientific paywalls]{style="font-size: 50%;"}
+
+------------------------------------------------------------------------
+
+### 2.3 Unequal access to *producing* knowledge {auto-animate="true"}
+
+::: {.fragment .fade-in}
+Most psychological science is built on samples from [WEIRD]{.is-accent} societies
+:::
+
+------------------------------------------------------------------------
+
+### 2.3 Unequal access to *producing* knowledge {auto-animate="true"}
+
+![](img/weird.png){width="70%"}
+
+::: {.fragment .fade-in style="font-size: 75%;"}
+**W**estern, **E**ducated, **I**ndustrialised, **R**ich, **D**emocratic — [Henrich et al. (2010)](https://doi.org/10.1017/S0140525X0999152X)
+:::
+
+------------------------------------------------------------------------
+
+### 2.4 Where does published science come from? {auto-animate="true"}
+
+**Q:** What share of the world's scientific output do you think comes from Latin America?
+
+------------------------------------------------------------------------
+
+### 2.4 Where does published science come from? {auto-animate="true"}
+
+![](img/produccion_cientifica_2025.png){width="100%"}
+
+[Data: SCImago Journal & Country Rank]{style="font-size: 50%;"}
+
+------------------------------------------------------------------------
+
+### 2.5 Two different bottlenecks {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+**Reading science**
+
+::: {.fragment .fade-in}
+-   Subscriptions and paywalls
+-   Excludes readers without institutional access
+:::
+:::
+
+::: {.column width="50%"}
+**Producing science**
+
+::: {.fragment .fade-in}
+-   Article Processing Charges (Gold OA)
+-   Excludes authors without funding to pay them
+:::
+:::
+:::::
+
+------------------------------------------------------------------------
+
+### 2.5 Two different bottlenecks {.center}
+
+::: poster
+::: overline
+The uncomfortable part
+:::
+
+::: title
+Gold Open Access doesn't remove the barrier.\
+It just moves it from [the reader]{.is-accent} to [the author]{.is-accent}.
+:::
+:::
+
+------------------------------------------------------------------------
+
+### 2.6 Not all Open Access is the same {auto-animate="true"}
+
+| Model | Who pays | Who is excluded |
+|----|----|----|
+| **Closed** | Reader (subscription) | Readers without institutional access |
+| **Gold OA** | Author (APC, often US\$1,000–3,000+) | Authors without funding |
+| **Green OA** | No one | (self-archived preprint/postprint) |
+| **Diamond OA** | No one | (community/institution-funded) |
+
+------------------------------------------------------------------------
+
+### 2.7 Brazil: a regional leader {auto-animate="true"}
+
+::: {.fragment .fade-in}
+-   Home to **SciELO**, one of the largest Open Access publishing infrastructures in the world
+:::
+
+::: {.fragment .fade-in}
+-   **CAPES** and national policy have pushed Open Access for over a decade
+:::
+
+::: {.fragment .fade-in}
+-   The [most mature and robust]{.is-accent} academic ecosystem in Latin America
+:::
+
+::: {.fragment .fade-in}
+-   But the regional gap in *who produces* high-impact science remains
+:::
+
+------------------------------------------------------------------------
+
+### 2.8 So what can we actually do about it? {auto-animate="true"}
+
+::: {.fragment .fade-in}
+The good news: the solutions that fix the reproducibility crisis are [often the same ones]{.is-accent} that lower these barriers
+:::
+
+::: {.fragment .fade-in style="font-size: 85%;"}
+[Green OA]{.chip} [Preprints]{.chip} [Preregistration]{.chip} [Registered Reports]{.chip}
+:::
+
+::: {.fragment .fade-in style="font-size: 85%;"}
+None of them require an APC, a paywall, or a well-funded lab
+:::
+
+# Part 3: What is Open Science? {background-color="#2c3e50"}
 
 ------------------------------------------------------------------------
 
@@ -57,7 +450,7 @@ Not a single practice, but a set of **principles** that can be applied at every 
 
 ### Why does this matter? {auto-animate="true"}
 
-::: {.fragment .fade-in}
+::: {.fragment}
 -   Science is meant to be **self-correcting**; but correction requires that others can check, reuse, and build on our work
 :::
 
@@ -117,366 +510,7 @@ well-funded institutions
 :::
 
 ::: {.fragment .fade-in}
--   Understanding *why* this shift happened starts with the problem it was designed to fix
-:::
-
-# Part 2: The Reproducibility Crisis {background-color="#2c3e50"}
-
-------------------------------------------------------------------------
-
-### 2.0 How is scientific knowledge actually built? {auto-animate="true"}
-
-How do we know if two things are really related?
-
-::: {.fragment .fade-in style="margin-top: 30px; font-size: 0.8em;"}
-[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
-:::
-
-------------------------------------------------------------------------
-
-### 2.0 How is scientific knowledge actually built? {auto-animate="true"}
-
-::: {style="font-size: 0.8em;"}
-[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
-:::
-
-![](img/variacion_muestral_base_estatica.png)
-
-------------------------------------------------------------------------
-
-### 2.0 How is scientific knowledge actually built? {auto-animate="true"}
-
-::: {style="font-size: 0.8em;"}
-[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
-:::
-
-![](img/simulacion_estudios_slow.gif?v=1)
-
-------------------------------------------------------------------------
-
-### 2.0 How is scientific knowledge actually built? {auto-animate="true"}
-
-::: {style="font-size: 0.8em;"}
-[Does my cat's meowing predict how many donuts I dream about?]{.is-accent}
-:::
-
-![](img/simulacion_estudios_fast.gif?v=1)
-
-------------------------------------------------------------------------
-
-### 2.0 What just happened? {auto-animate="true"}
-
-::: {.fragment .fade-in}
-There is [no real relationship]{.is-accent} between these two variables
-:::
-
-::: {.fragment .fade-in}
-Yet, by chance alone, some simulated studies still come out "significant"
-:::
-
-::: {.fragment .fade-in style="font-size: 85%;"}
-Now imagine that only the "significant" ones get submitted, reviewed, and published
-:::
-
-------------------------------------------------------------------------
-
-###  {auto-animate="true"}
-
-**Q:** What percentage of published findings in psychology are statistically significant?
-
-------------------------------------------------------------------------
-
-###  {auto-animate="true"}
-
-**Q:** What percentage of published findings in psychology are statistically significant?\
-**A:** [96%]{style="font-size: 150%;" .is-accent}
-
-------------------------------------------------------------------------
-
-###  {auto-animate="true"}
-
-**Q:** What percentage of published findings in psychology are statistically significant?\
-**A:** [96%]{style="font-size: 150%;" .is-accent}
-
-![](img/p05.png)
-
-------------------------------------------------------------------------
-
-### 2.1 Can we trust the literature? {auto-animate="true"}
-
-There are two options:
-
-1.  We study effects with \>90% power and \>90% probability of being true.
-
-------------------------------------------------------------------------
-
-### 2.1 Can we trust the literature? {auto-animate="true"}
-
-There are two options:
-
-1.  We study effects with \>90% power and \>90% probability of being true.
-2.  [There is massive publication bias.]{.fragment .accent-on-click}
-
-------------------------------------------------------------------------
-
-### 2.1 Can we trust the literature? {auto-animate="true"}
-
-2.  [There is massive publication bias]{.is-accent} (across multiple disciplines).
-
-![](img/publication-bias.png){width="60%"}\
-[[Source](https://x.com/cremieuxrecueil/status/1772765486935056893)]{style="font-size: 50%;"}
-
-------------------------------------------------------------------------
-
-### 2.2 The significance filter {auto-animate="true"}
-
-![](img/significance-filter.png){width="80%"}
-
-------------------------------------------------------------------------
-
-### 2.2 The significance filter {auto-animate="true"}
-
-::::: columns
-::: {.column width="50%"}
-1.1 million z-values, medical research (1976–2019)
-
-![](img/zvalues-medical.png){width="400"}
-
-[[van Zwet & Cator (2021)](https://doi.org/10.1111/stan.12241)]{style="font-size: 50%;"}
-:::
-
-::: {.column .fragment .fade-in width="50%"}
-<br>Also found in PLOS ONE
-
-![](img/plosone.png){width="400"}
-:::
-:::::
-
-------------------------------------------------------------------------
-
-### 2.3 Ten threats, one root cause {auto-animate="true"}
-
-::: poster
-::: overline
-Where do false positives come from?
-:::
-
-::: title
-Almost every step of the pipeline can be [bent]{.is-accent} toward a "significant" result
-:::
-:::
-
-------------------------------------------------------------------------
-
-### 2.3 Ten threats, one root cause {auto-animate="true"}
-
-[🧪 P-hacking]{.chip} [💡 HARKing]{.chip} [📦 Publication Bias]{.chip} [📏 Low Power]{.chip} [🔧 Flexible Pipelines]{.chip} [🧠 No Preregistration]{.chip} [🧾 Poor Reporting]{.chip} [📊 Selective Reporting]{.chip} [🔄 Data/Code Not Shared]{.chip} [🌐 Cultural Incentives]{.chip}
-
-::: {.fragment .fade-in style="font-size: 80%; margin-top: 1em;"}
-Two of these deserve a closer look
-:::
-
-------------------------------------------------------------------------
-
-### 2.4 P-hacking {auto-animate="true"}
-
-::: {.fragment .fade-in}
-Trying multiple analyses until [*p* \< .05]{.is-accent}
-:::
-
-::: {.fragment .fade-in style="font-size: 90%;"}
-Every extra test, covariate, or exclusion rule you try (and don't report) inflates the real Type I error rate, silently
-:::
-
-------------------------------------------------------------------------
-
-### 2.5 HARKing {auto-animate="true"}
-
-*H*ypothesising *A*fter the *R*esults are *K*nown
-
-![](img/HARKing.jpeg)
-
-------------------------------------------------------------------------
-
-### 2.5 HARKing {auto-animate="true"}
-
-![](img/HARKing.jpeg)
-
-::: {.fragment .fade-in style="font-size: 85%;"}
-It turns an exploratory finding into something that [looks]{.is-accent} like a confirmed prediction
-:::
-
-------------------------------------------------------------------------
-
-### 2.6 The common thread {auto-animate="true"}
-
-::: poster
-::: overline
-It's not (only) bad actors
-:::
-
-::: title
-Most of this happens through [ordinary, well-intentioned]{.is-accent} choices, made *after* seeing the data
-:::
-:::
-
-------------------------------------------------------------------------
-
-### 2.6 The four horsemen of the reproducibility apocalypse {auto-animate="true"}
-
-![](img/4horsemen.jpg)
-
-# Part 3: A Global Challenge {background-color="#2c3e50"}
-
-------------------------------------------------------------------------
-
-### 3.1 It's not just about *replicating* findings {auto-animate="true"}
-
-::: {.fragment .fade-in}
-It's also about [who gets to read science, and who gets to produce it]{.is-accent}
-:::
-
-------------------------------------------------------------------------
-
-### 3.2 Unequal access to knowledge {auto-animate="true"}
-
-**Q:** How much does it typically cost to read a single paywalled article?
-
-------------------------------------------------------------------------
-
-### 3.2 Unequal access to knowledge {auto-animate="true"}
-
-**Q:** How much does it typically cost to read a single paywalled article?\
-**A:** [US$30–50]{style="font-size: 150%;" .is-accent}
-
-::: {.fragment .fade-in style="font-size: 80%;"}
-For a single paper. Not a subscription, not a journal, one article.
-:::
-
-------------------------------------------------------------------------
-
-### 3.2 Unequal access to knowledge {auto-animate="true"}
-
-![](img/nat-inaccesibility.webp){width="75%"}
-
-[Nature, on the cost of scientific paywalls]{style="font-size: 50%;"}
-
-------------------------------------------------------------------------
-
-### 3.3 Unequal access to *producing* knowledge {auto-animate="true"}
-
-::: {.fragment .fade-in}
-Most psychological science is built on samples from [WEIRD]{.is-accent} societies
-:::
-
-------------------------------------------------------------------------
-
-### 3.3 Unequal access to *producing* knowledge {auto-animate="true"}
-
-![](img/weird.png){width="70%"}
-
-::: {.fragment .fade-in style="font-size: 75%;"}
-**W**estern, **E**ducated, **I**ndustrialised, **R**ich, **D**emocratic — [Henrich et al. (2010)](https://doi.org/10.1017/S0140525X0999152X)
-:::
-
-------------------------------------------------------------------------
-
-### 3.4 Where does published science come from? {auto-animate="true"}
-
-**Q:** What share of the world's scientific output do you think comes from Latin America?
-
-------------------------------------------------------------------------
-
-### 3.4 Where does published science come from? {auto-animate="true"}
-
-![](img/produccion_cientifica_2025.png){width="100%"}
-
-[Data: SCImago Journal & Country Rank]{style="font-size: 50%;"}
-
-------------------------------------------------------------------------
-
-### 3.5 Two different bottlenecks {auto-animate="true"}
-
-::::: columns
-::: {.column width="50%"}
-**Reading science**
-
-::: {.fragment .fade-in}
--   Subscriptions and paywalls
--   Excludes readers without institutional access
-:::
-:::
-
-::: {.column width="50%"}
-**Producing science**
-
-::: {.fragment .fade-in}
--   Article Processing Charges (Gold OA)
--   Excludes authors without funding to pay them
-:::
-:::
-:::::
-
-------------------------------------------------------------------------
-
-### 3.5 Two different bottlenecks {.center}
-
-::: poster
-::: overline
-The uncomfortable part
-:::
-
-::: title
-Gold Open Access doesn't remove the barrier.\
-It just moves it from [the reader]{.is-accent} to [the author]{.is-accent}.
-:::
-:::
-
-------------------------------------------------------------------------
-
-### 3.6 Not all Open Access is the same {auto-animate="true"}
-
-| Model | Who pays | Who is excluded |
-|----|----|----|
-| **Closed** | Reader (subscription) | Readers without institutional access |
-| **Gold OA** | Author (APC, often US\$1,000–3,000+) | Authors without funding |
-| **Green OA** | No one | (self-archived preprint/postprint) |
-| **Diamond OA** | No one | (community/institution-funded) |
-
-------------------------------------------------------------------------
-
-### 3.7 Brazil: a regional leader {auto-animate="true"}
-
-::: {.fragment .fade-in}
--   Home to **SciELO**, one of the largest Open Access publishing infrastructures in the world
-:::
-
-::: {.fragment .fade-in}
--   **CAPES** and national policy have pushed Open Access for over a decade
-:::
-
-::: {.fragment .fade-in}
--   The [most mature and robust]{.is-accent} academic ecosystem in Latin America
-:::
-
-::: {.fragment .fade-in}
--   But the regional gap in *who produces* high-impact science remains
-:::
-
-------------------------------------------------------------------------
-
-### 3.8 So what can we actually do about it? {auto-animate="true"}
-
-::: {.fragment .fade-in}
-The good news: the solutions that fix the reproducibility crisis are [often the same ones]{.is-accent} that lower these barriers
-:::
-
-::: {.fragment .fade-in style="font-size: 85%;"}
-[Green OA]{.chip} [Preprints]{.chip} [Preregistration]{.chip} [Registered Reports]{.chip}
-:::
-
-::: {.fragment .fade-in style="font-size: 85%;"}
-None of them require an APC, a paywall, or a well-funded lab
+-   [Open Science]{.is-accent} is the field's structured response to everything you've just seen — the rest of this talk covers two of its most concrete tools
 :::
 
 # Part 4: Preregistration {background-color="#2c3e50"}

@@ -121,7 +121,7 @@ vals_num_h <- c(lims_h[1], 10, 100, 1000, lims_h[2])
 vals_h <- rescale(log10(vals_num_h), to = c(0, 1), from = log10(lims_h))
 
 # Paleta (gris → magenta MetaCiencia)
-pal_mc <- c("#3b3b3b", "#3b3b3b", "#3b3b3b", "#3f313c", "#d400aa")
+pal_mc <- c("#3b3b3b", "#3b3b3b", "#3b3b3b", "#08303b", "#13718c")
 
 # --- Mapas individuales ----------------------------------------------------
 # (A) Índice H
