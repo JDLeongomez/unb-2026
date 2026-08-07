@@ -6,7 +6,10 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="index_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="index_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Juan David Leongómez">
@@ -35,7 +38,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b2736e9fcda83c748fd63b6e579550ef.css">
   <link rel="stylesheet" href="../styles/unb-2026.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -182,9 +205,8 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 <h1>Part 1: The Reproducibility Crisis</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="how-is-scientific-knowledge-actually-built">1.0 How is scientific knowledge actually built?</h3>
+<section id="how-is-scientific-knowledge-actually-built" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 How is scientific knowledge actually built?</h2>
 <p>How do we know if two things are really related?</p>
 <div class="fragment fade-in" style="margin-top: 30px; font-size: 0.8em;">
 <p><span class="is-accent">Does my cat’s meowing predict how many donuts I dream about?</span></p>
@@ -194,33 +216,29 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 (this is Electra, my <span class="is-accent">“cat”</span>)</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="how-is-scientific-knowledge-actually-built-1">1.0 How is scientific knowledge actually built?</h3>
+<section id="how-is-scientific-knowledge-actually-built-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 How is scientific knowledge actually built?</h2>
 <div style="font-size: 0.8em;">
 <p><span class="is-accent">Does my cat’s meowing predict how many donuts I dream about?</span></p>
 </div>
 
 <img data-src="img/variacion_muestral_base_estatica.png" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="how-is-scientific-knowledge-actually-built-2">1.0 How is scientific knowledge actually built?</h3>
+<section id="how-is-scientific-knowledge-actually-built-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 How is scientific knowledge actually built?</h2>
 <div style="font-size: 0.8em;">
 <p><span class="is-accent">Does my cat’s meowing predict how many donuts I dream about?</span></p>
 </div>
 
 <img data-src="img/simulacion_estudios_slow.gif" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="how-is-scientific-knowledge-actually-built-3">1.0 How is scientific knowledge actually built?</h3>
+<section id="how-is-scientific-knowledge-actually-built-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 How is scientific knowledge actually built?</h2>
 <div style="font-size: 0.8em;">
 <p><span class="is-accent">Does my cat’s meowing predict how many donuts I dream about?</span></p>
 </div>
 
 <img data-src="img/simulacion_estudios_fast.gif" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="what-just-happened">1.0 What just happened?</h3>
+<section id="what-just-happened" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 What just happened?</h2>
 <div class="fragment fade-in">
 <p>There is <span class="is-accent">no real relationship</span> between these two variables</p>
 </div>
@@ -231,32 +249,28 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 <p>Now imagine that only the “significant” ones get submitted, reviewed, and published</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="why-is-it-so-hard-to-produce-knowledge-we-can-trust">1.0 Why is it so hard to produce knowledge we can trust?</h3>
+<section id="why-is-it-so-hard-to-produce-knowledge-we-can-trust" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 Why is it so hard to produce knowledge we can trust?</h2>
 <div style="text-align: center;">
 <p><img data-src="img/p05.png"></p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="why-is-it-so-hard-to-produce-knowledge-we-can-trust-1">1.0 Why is it so hard to produce knowledge we can trust?</h3>
+<section id="why-is-it-so-hard-to-produce-knowledge-we-can-trust-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.0 Why is it so hard to produce knowledge we can trust?</h2>
 <div style="text-align: center;">
 <p><img data-src="img/distribucion_pvals_poder.gif"></p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="section"></h3>
+<section id="section" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
 <div class="poster">
 <div class="overline">
 <p>Q: <strong>What percentage of published findings in psychology are statistically significant?</strong></p>
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="section-1"></h3>
+<section id="section-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
 <div class="poster">
 <div class="overline">
 <p>Q: <strong>What percentage of published findings in psychology are statistically significant?</strong></p>
@@ -264,55 +278,47 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 <div class="title">
 <p><span class="is-accent">96%</span></p>
 </div>
+<div class="fragment">
+<p><span style="font-size: 50%;"><span class="citation" data-cites="scheelExcessPositiveResults2021 bakkerRulesGameCalled2012 brzezinskiCredibilityCrisisPsychology2023">(<a href="#/references" role="doc-biblioref" onclick=""><span class="nocase">Bakker et al.</span>, 2012</a>; <a href="#/references" role="doc-biblioref" onclick="">Brzeziński, 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Scheel et al., 2021</a>)</span></span></p>
+</div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="can-we-trust-the-literature">1.1 Can we trust the literature?</h3>
+<section id="can-we-trust-the-literature" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.1 Can we trust the literature?</h2>
 <p>There are two options:</p>
 <ol type="1">
-<li>We study effects with &gt;90% power and &gt;90% probability of being true.</li>
+<li class="fragment">We study effects with &gt;90% power and &gt;90% probability of being true.</li>
+<li class="fragment"><span class="fragment accent-on-click">There is massive publication bias.</span></li>
 </ol>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="can-we-trust-the-literature-1">1.1 Can we trust the literature?</h3>
-<p>There are two options:</p>
-<ol type="1">
-<li>We study effects with &gt;90% power and &gt;90% probability of being true.</li>
-<li><span class="fragment accent-on-click">There is massive publication bias.</span></li>
-</ol>
-</section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="can-we-trust-the-literature-2">1.1 Can we trust the literature?</h3>
+<section id="can-we-trust-the-literature-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.1 Can we trust the literature?</h2>
 <ol start="2" type="1">
 <li><span class="is-accent">There is massive publication bias</span> (across multiple disciplines).</li>
 </ol>
+<div style="text-align: center;">
 <p><img data-src="img/publication-bias.png" style="width:60.0%"><br>
 <span style="font-size: 50%;"><a href="https://x.com/cremieuxrecueil/status/1772765486935056893">Source</a></span></p>
+</div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-significance-filter">1.2 The significance filter</h3>
+<section id="the-significance-filter" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.2 The significance filter</h2>
 
 <img data-src="img/significance-filter.png" style="width:80.0%" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-significance-filter-1">1.2 The significance filter</h3>
+<section id="the-significance-filter-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.2 The significance filter</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p>1.1 million z-values, medical research (1976–2019)</p>
-<p><img data-src="img/zvalues-medical.png" width="400"></p>
-<p><span style="font-size: 50%;"><a href="https://doi.org/10.1111/stan.12241">van Zwet &amp; Cator (2021)</a></span></p>
-</div><div class="column fragment fade-in" style="width:50%;">
-<p><br>Also found in PLOS ONE</p>
+<div class="column" style="text-align: center;">
+<p>1.1 million z-values, Medline (PubMed) - 1976–2019</p>
+<p><img data-src="img/zvalues-medical.png" width="400"><br>
+<span style="font-size: 50%;"><span class="citation" data-cites="siggap2021">(<a href="#/references" role="doc-biblioref" onclick="">Zwet &amp; Cator, 2021</a>)</span></span></p>
+</div><div class="column fragment fade-in" style="text-align: center;">
+<p><br>Also found in PLOS One</p>
 <p><img data-src="img/plosone.png" width="400"></p>
 </div></div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="ten-threats-one-root-cause">1.3 Ten threats, one root cause</h3>
+<section id="ten-threats-one-root-cause" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.3 Ten threats, one root cause</h2>
 <div class="poster">
 <div class="overline">
 <p>Where do false positives come from?</p>
@@ -322,17 +328,21 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="ten-threats-one-root-cause-1">1.3 Ten threats, one root cause</h3>
+<section id="ten-threats-one-root-cause-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.3 Ten threats, one root cause</h2>
 <p><span class="chip">🧪 P-hacking</span> <span class="chip">💡 HARKing</span> <span class="chip">📦 Publication Bias</span> <span class="chip">📏 Low Power</span> <span class="chip">🔧 Flexible Pipelines</span> <span class="chip">🧠 No Preregistration</span> <span class="chip">🧾 Poor Reporting</span> <span class="chip">📊 Selective Reporting</span> <span class="chip">🔄 Data/Code Not Shared</span> <span class="chip">🌐 Cultural Incentives</span></p>
-<div class="fragment fade-in" style="font-size: 80%; margin-top: 1em;">
-<p>Two of these deserve a closer look</p>
-</div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="p-hacking">1.4 P-hacking</h3>
+<section id="ten-threats-one-root-cause-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.3 Ten threats, one root cause</h2>
+<p><span class="chip">🧪 P-hacking</span> <span class="chip">💡 HARKing</span> <span class="chip-covered">📦 Publication Bias</span> <span class="chip-covered">📏 Low Power</span> <span class="chip">🔧 Flexible Pipelines</span> <span class="chip-important">🧠 No Preregistration</span> <span class="chip">🧾 Poor Reporting</span> <span class="chip">📊 Selective Reporting</span> <span class="chip">🔄 Data/Code Not Shared</span> <span class="chip">🌐 Cultural Incentives</span></p>
+</section>
+<section id="ten-threats-one-root-cause-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.3 Ten threats, one root cause</h2>
+<p><span class="is-accent">P-hacking</span> and <span class="is-accent">HARKing</span> deserve a closer look</p>
+<p><span class="chip-next">🧪 P-hacking</span> <span class="chip-next">💡 HARKing</span> <span class="chip-covered">📦 Publication Bias</span> <span class="chip-covered">📏 Low Power</span> <span class="chip">🔧 Flexible Pipelines</span> <span class="chip-important">🧠 No Preregistration</span> <span class="chip">🧾 Poor Reporting</span> <span class="chip">📊 Selective Reporting</span> <span class="chip">🔄 Data/Code Not Shared</span> <span class="chip">🌐 Cultural Incentives</span></p>
+</section>
+<section id="p-hacking" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.4 P-hacking</h2>
 <div class="fragment fade-in">
 <p>Trying multiple analyses until <span class="is-accent"><em>p</em> &lt; .05</span></p>
 </div>
@@ -340,23 +350,23 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 <p>Every extra test, covariate, or exclusion rule you try (and don’t report) inflates the real Type I error rate, silently</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="harking">1.5 HARKing</h3>
-<p><em>H</em>ypothesising <em>A</em>fter the <em>R</em>esults are <em>K</em>nown</p>
-
-<img data-src="img/HARKing.jpeg" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="harking-1">1.5 HARKing</h3>
-
-<img data-src="img/HARKing.jpeg" class="r-stretch"><div class="fragment fade-in" style="font-size: 85%;">
-<p>It turns an exploratory finding into something that <span class="is-accent">looks</span> like a confirmed prediction</p>
+<section id="harking" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.5 HARKing</h2>
+<p><strong>H</strong>ypothesising <strong>A</strong>fter the <strong>R</strong>esults are <strong>K</strong>nown</p>
+<div class="fragment fade-in">
+<p><img data-src="img/HARKing.jpeg"></p>
 </div>
 </section>
-<section class="slide level2">
+<section id="harking-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.5 HARKing</h2>
+<p><strong>H</strong>ypothesising <strong>A</strong>fter the <strong>R</strong>esults are <strong>K</strong>nown</p>
 
-<h3 data-auto-animate="true" id="the-common-thread">1.6 The common thread</h3>
+<img data-src="img/HARKing.jpeg" class="r-stretch"><div style="font-size: 85%;">
+<p>It turns an <strong>exploratory</strong> finding into something that <span class="is-accent">looks</span> like a confirmed prediction</p>
+</div>
+</section>
+<section id="the-common-thread" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.6 The common thread</h2>
 <div class="poster">
 <div class="overline">
 <p>It’s not (only) bad actors</p>
@@ -366,72 +376,115 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-four-horsemen-of-the-reproducibility-apocalypse">1.6 The four horsemen of the reproducibility apocalypse</h3>
-
-<img data-src="img/4horsemen.jpg" class="r-stretch"></section></section>
+<section id="the-four-horsemen-of-the-reproducibility-apocalypse" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.6 The four horsemen of the reproducibility apocalypse</h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/4horsemen.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="the-four-horsemen-of-the-reproducibility-apocalypse-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">1.6 The four horsemen of the reproducibility apocalypse</h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/4horsemen.jpg" class="quarto-figure quarto-figure-center" style="width:160.0%"></p>
+</figure>
+</div>
+</div>
+</section></section>
 <section>
 <section id="part-2-a-global-challenge" class="title-slide slide level1 center" data-background-color="#2c3e50">
 <h1>Part 2: A Global Challenge</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="its-not-just-about-replicating-findings">2.1 It’s not just about <em>replicating</em> findings</h3>
+<section id="its-not-just-about-replicating-findings" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.1 It’s not just about <strong><em>replicating</em></strong> findings</h2>
 <div class="fragment fade-in">
-<p>It’s also about <span class="is-accent">who gets to read science, and who gets to produce it</span></p>
+<p>It’s also about <span class="is-accent">who gets to read science, who is represented, and who gets to produce it</span></p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="unequal-access-to-knowledge">2.2 Unequal access to knowledge</h3>
+<section id="unequal-access-to-knowledge" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.2 Unequal access to knowledge</h2>
 <p><strong>Q:</strong> How much does it typically cost to read a single paywalled article?</p>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="unequal-access-to-knowledge-1">2.2 Unequal access to knowledge</h3>
-<p><strong>Q:</strong> How much does it typically cost to read a single paywalled article?<br>
-<strong>A:</strong> <span class="is-accent" style="font-size: 150%;">US$30–50</span></p>
+<section id="unequal-access-to-knowledge-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.2 Unequal access to knowledge</h2>
+<p><strong>Q:</strong> How much does it typically cost to read a single paywalled article?</p>
+<p><strong>A:</strong> <span class="is-accent" style="font-size: 150%;">US$30–50</span></p>
 <div class="fragment fade-in" style="font-size: 80%;">
-<p>For a single paper. Not a subscription, not a journal, one article.</p>
+<p>For a single article.</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="unequal-access-to-knowledge-2">2.2 Unequal access to knowledge</h3>
-
-<img data-src="img/nat-inaccesibility.webp" style="width:75.0%" class="r-stretch"><p><span style="font-size: 50%;">Nature, on the cost of scientific paywalls</span></p>
-</section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="unequal-access-to-producing-knowledge">2.3 Unequal access to <em>producing</em> knowledge</h3>
-<div class="fragment fade-in">
-<p>Most psychological science is built on samples from <span class="is-accent">WEIRD</span> societies</p>
+<section id="unequal-access-to-knowledge-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.2 Unequal access to knowledge</h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nat-inaccesibility.webp" class="fragment quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="unequal-access-to-producing-knowledge-1">2.3 Unequal access to <em>producing</em> knowledge</h3>
-
-<img data-src="img/weird.png" style="width:70.0%" class="r-stretch"><div class="fragment fade-in" style="font-size: 75%;">
-<p><strong>W</strong>estern, <strong>E</strong>ducated, <strong>I</strong>ndustrialised, <strong>R</strong>ich, <strong>D</strong>emocratic — <a href="https://doi.org/10.1017/S0140525X0999152X">Henrich et al.&nbsp;(2010)</a></p>
+<section id="unequal-access-to-knowledge-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.2 Unequal access to knowledge</h2>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nat-inaccesibility.webp" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="where-does-published-science-come-from">2.4 Where does published science come from?</h3>
-<p><strong>Q:</strong> What share of the world’s scientific output do you think comes from Latin America?</p>
+<section id="unequal-representation-in-knowledge" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.3 Unequal <strong><em>representation</em></strong> in knowledge</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="r-stack">
+<p><img data-src="img/weird.png" style="width:100.0%"><br>
+<span style="font-size: 50%;"><span class="citation" data-cites="Henrich2010">(<a href="#/references" role="doc-biblioref" onclick="">Henrich et al., 2010</a>)</span></span></p>
+</div>
+</div><div class="column fragment fade-in" style="width:35%;">
+<p><strong>Societies:</strong></p>
+<p><span class="is-accent"><strong>W</strong></span>estern</p>
+<p><span class="is-accent"><strong>E</strong></span>ducated</p>
+<p><span class="is-accent"><strong>I</strong></span>ndustrialised</p>
+<p><span class="is-accent"><strong>R</strong></span>ich</p>
+<p><span class="is-accent"><strong>D</strong></span>emocratic</p>
+</div></div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="where-does-published-science-come-from-1">2.4 Where does published science come from?</h3>
-
-<img data-src="img/produccion_cientifica_2025.png" style="width:100.0%" class="r-stretch"><p><span style="font-size: 50%;">Data: SCImago Journal &amp; Country Rank</span></p>
+<section id="unequal-access-to-producing-knowledge" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.4 Unequal access to <strong><em>producing</em></strong> knowledge</h2>
+<p><a href="img/produccion_cientifica_2025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="img/produccion_cientifica_2025.png" style="width:100.0%"></a></p>
+<p><span style="font-size: 50%;">Data: SCImago Journal &amp; Country Rank</span></p>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="two-different-bottlenecks">2.5 Two different bottlenecks</h3>
+<section id="unequal-access-to-producing-knowledge-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.4 Unequal access to <strong><em>producing</em></strong> knowledge</h2>
+<div class="poster">
+<div class="overline">
+<p>Q: <strong>What share of the world’s scientific output do you think comes from Latin America?</strong></p>
+</div>
+</div>
+</section>
+<section id="unequal-access-to-producing-knowledge-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.4 Unequal access to <strong><em>producing</em></strong> knowledge</h2>
+<div class="poster">
+<div class="overline">
+<p>Q: <strong>What share of the world’s scientific output do you think comes from Latin America?</strong></p>
+</div>
+<div class="title">
+<p><span class="is-accent">3-6%</span></p>
+</div>
+<div style="font-size: 65%; margin-top: 0.8em;">
+<p>Up from ~1.5% in the early 1990s <span class="citation" data-cites="hermeslima2007 hidalgo2020">(<a href="#/references" role="doc-biblioref" onclick="">Hermes-Lima et al., 2007</a>; <a href="#/references" role="doc-biblioref" onclick="">Hidalgo, 2020</a>)</span>, despite the region being home to ~8% of the world’s population</p>
+</div>
+</div>
+</section>
+<section id="two-different-bottlenecks" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.5 Two different bottlenecks</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Reading science</strong></p>
@@ -451,9 +504,8 @@ A peer-review model that shifts the focus to study design and rigour.</span></p>
 </div>
 </div></div>
 </section>
-<section class="slide level2">
-
-<h3 class="center" id="two-different-bottlenecks-1">2.5 Two different bottlenecks</h3>
+<section id="two-different-bottlenecks-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.5 Two different bottlenecks</h2>
 <div class="poster">
 <div class="overline">
 <p>The uncomfortable part</p>
@@ -464,14 +516,17 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="not-all-open-access-is-the-same">2.6 Not all Open Access is the same</h3>
+<section id="not-all-open-access-is-the-same" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.6 Not all Open Access is the same</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="img/Logo_open_access1.png"></p>
+</div><div class="column" style="width:90%;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 17%">
+<col style="width: 43%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -503,10 +558,54 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </tr>
 </tbody>
 </table>
+</div></div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="brazil-a-regional-leader">2.7 Brazil: a regional leader</h3>
+<section id="not-all-open-access-is-the-same-1" class="slide level2">
+<h2>2.6 Not all Open Access is the same</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="img/Logo_open_access2.png"></p>
+</div><div class="column" style="width:90%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 43%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Who pays</th>
+<th>Who is excluded</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Closed</strong></td>
+<td>Reader (subscription)</td>
+<td>Readers without institutional access</td>
+</tr>
+<tr class="even">
+<td><strong>Gold OA</strong></td>
+<td>Author (APC, often US$1,000–3,000+)</td>
+<td>Authors without funding</td>
+</tr>
+<tr class="odd">
+<td><strong>Green OA</strong></td>
+<td>No one</td>
+<td>(self-archived preprint/postprint)</td>
+</tr>
+<tr class="even">
+<td><strong>Diamond OA</strong></td>
+<td>No one</td>
+<td>(community/institution-funded)</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="brazil-a-regional-leader" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.7 Brazil: a regional leader</h2>
 <div class="fragment fade-in">
 <ul>
 <li>Home to <strong>SciELO</strong>, one of the largest Open Access publishing infrastructures in the world</li>
@@ -528,14 +627,13 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="so-what-can-we-actually-do-about-it">2.8 So what can we actually do about it?</h3>
+<section id="so-what-can-we-actually-do-about-it" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">2.8 So what can we actually do about it?</h2>
 <div class="fragment fade-in">
 <p>The good news: the solutions that fix the reproducibility crisis are <span class="is-accent">often the same ones</span> that lower these barriers</p>
 </div>
 <div class="fragment fade-in" style="font-size: 85%;">
-<p><span class="chip">Green OA</span> <span class="chip">Preprints</span> <span class="chip">Preregistration</span> <span class="chip">Registered Reports</span></p>
+<p><span class="chip">Green or Diamond OA</span> <span class="chip">Preprints</span> <span class="chip">Preregistration</span> <span class="chip">Registered Reports</span></p>
 </div>
 <div class="fragment fade-in" style="font-size: 85%;">
 <p>None of them require an APC, a paywall, or a well-funded lab</p>
@@ -546,17 +644,15 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <h1>Part 3: What is Open Science?</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="what-do-we-mean-by-open-science">What do we mean by “Open Science”?</h3>
+<section id="what-do-we-mean-by-open-science" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What do we mean by “Open Science”?</h2>
 <p><strong>Open Science</strong> is the movement to make the process and products of research (data, code, materials, and publications) openly accessible, transparent, and reusable.</p>
 <div class="fragment fade-in">
 <p>Not a single practice, but a set of <strong>principles</strong> that can be applied at every stage of the research cycle: from planning a study to sharing its results.</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="why-does-this-matter">Why does this matter?</h3>
+<section id="why-does-this-matter" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Why does this matter?</h2>
 <div class="fragment">
 <ul>
 <li>Science is meant to be <strong>self-correcting</strong>; but correction requires that others can check, reuse, and build on our work</li>
@@ -573,32 +669,33 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="the-pillars-of-open-science">The Pillars of Open Science</h3>
+<section id="some-building-blocks-of-open-science" class="slide level2">
+<h2>Some Building Blocks of Open Science</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragment fade-in">
-<p>📂 <strong>Open Data</strong>: sharing the raw data behind a finding</p>
+<p>📂 <strong>Open Data</strong>: sharing the raw data behind a finding, so exclusions and re-analyses can actually be checked<br><span style="font-size: 70%;">(E.g. the <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a>)</span></p>
 </div>
 <div class="fragment fade-in">
-<p>💻 <strong>Open Code</strong>: sharing the analysis scripts that produced the results</p>
+<p>💻 <strong>Open Code</strong>: sharing the analysis scripts, the flexible pipelines behind p-hacking, made visible</p>
 </div>
-<div class="fragment fade-in">
-<p>📄 <strong>Open Access</strong>: publishing so anyone can read the paper, not just those at well-funded institutions</p>
-</div>
-</div><div class="column" style="width:50%;">
 <div class="fragment fade-in">
 <p>🧰 <strong>Open Materials</strong>: sharing stimuli, questionnaires, and protocols</p>
 </div>
+</div><div class="column" style="width:50%;">
 <div class="fragment fade-in">
-<p>📝 <strong>Preregistration</strong>: stating the plan <em>before</em> seeing the data</p>
+<p>📄 <strong>Open Access</strong>: publishing so anyone can read it.<br><span style="font-size: 70%;">(<span class="is-accent">Green</span> and <span class="is-accent">Diamond</span> OA <strong>don’t move the $ barrier</strong> to the author)</span></p>
+</div>
+<div class="fragment fade-in">
+<p>📝 <strong>Preregistration</strong>: stating the plan <em>before</em> seeing the data, the direct answer to HARKing</p>
+</div>
+<div class="fragment fade-in">
+<p>🔒 <span class="is-accent"><strong>Registered Reports</strong></span>: preregistration taken one step further, peer-reviewed <em>before</em> data collection</p>
 </div>
 </div></div>
 </section>
-<section class="slide level2">
-
-<h3 id="why-this-matters-for-psychology-and-behavioural-sciences">Why this matters for psychology and behavioural sciences</h3>
+<section id="why-this-matters-for-psychology-and-behavioural-sciences" class="slide level2">
+<h2>Why this matters for psychology and behavioural sciences</h2>
 <div class="fragment fade-in">
 <ul>
 <li>Psychology has been at the centre of the reproducibility conversation for over a decade</li>
@@ -616,7 +713,7 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </div>
 <div class="fragment fade-in">
 <ul>
-<li><span class="is-accent">Open Science</span> is the field’s structured response to everything you’ve just seen — the rest of this talk covers two of its most concrete tools</li>
+<li><span class="is-accent">Open Science</span> is the field’s structured response to everything you’ve just seen<br><span style="font-size: 70%;">The rest of this talk covers two of its most concrete tools</span></li>
 </ul>
 </div>
 </section></section>
@@ -625,36 +722,92 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <h1>Part 4: Preregistration</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="what-is-preregistration">4.1 What is preregistration?</h3>
+<section id="what-is-preregistration" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.1 What is preregistration?</h2>
 <p><strong>Preregistration</strong> is the act of specifying your research plan <em>before</em> conducting the study.</p>
 <div class="fragment fade-in">
 <p><img data-src="img/cos.webp"></p>
 </div>
 </section>
-<section class="slide level2">
+<section id="the-preregistration-pipeline" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.1 The preregistration pipeline</h2>
+<p>The traditional publishing pipeline</p>
+<div style="transform: scale(0.9); transform-origin: top center; margin: 10px 0 -35px 0;">
+<div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
 
-<h3 data-auto-animate="true" id="what-is-preregistration-1">4.1 What is preregistration?</h3>
-<div class="fragment fade-in">
-<ul>
-<li>Define your research question and hypotheses <strong>before</strong> collecting data</li>
-</ul>
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px; flex-wrap:wrap; justify-content:center;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">NO PLAN REGISTERED</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:120px;">Design study &amp;<br>collect data</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="text-align:center;">
+      <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; font-size:0.75em; min-width:110px;">Analyze data</div>
+      <div style="font-size:0.6em; color:#9CA3AF; font-style:italic; margin-top:3px;">flexible pipelines possible</div>
+    </div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="text-align:center;">
+      <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; font-size:0.75em; min-width:110px;">Write paper</div>
+      <div style="font-size:0.6em; color:#9CA3AF; font-style:italic; margin-top:3px;">hypotheses can be reframed</div>
+    </div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:110px;">Submit to journal</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:120px;">Peer review<br>↻ often several rounds</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#fff; border:2px dashed #13718c; border-radius:999px; padding:9px 26px; text-align:center;">
+    <div style="font-weight:700; color:#13718c;">Accepted?</div>
+    <div style="font-size:0.65em; color:#6B7280;">Partly depends on whether the results look good; the seed of publication bias</div>
+  </div>
+
 </div>
-<div class="fragment fade-in">
-<ul>
-<li>Specify your analysis plan and study design in advance</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>Clearly link your hypotheses to your planned methods and outcomes</li>
-</ul>
 </div>
 </section>
-<section class="slide level2">
+<section id="the-preregistration-pipeline-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.1 The preregistration pipeline</h2>
+<div style="transform: scale(0.8); transform-origin: top center; margin: 10px 0 -35px 0;">
+<div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
 
-<h3 data-auto-animate="true" id="why-preregister">4.1 Why preregister?</h3>
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">BEFORE DATA</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:130px;">Plan study &amp;<br>write hypotheses/methods</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:130px;">Register plan<br>(OSF, AsPredicted...)</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#fff; border:2px solid #13718c; border-radius:999px; padding:9px 26px; text-align:center;">
+    <div style="font-weight:700; color:#13718c;">Preregistered</div>
+    <div style="font-size:0.65em; color:#6B7280;">Public, time-stamped record — no one evaluates the plan</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">AFTER DATA</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:130px;">Collect data &amp; run<br>pre-registered analyses</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:110px;">Write full report</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:110px;">Submit to journal</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:120px;">Peer review<br>↻ often several rounds</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:999px; padding:10px 28px; text-align:center;">
+    <div style="font-weight:700; color:#fff;">Standard peer review</div>
+    <div style="font-size:0.65em; color:#cfe4e9;">Reviewers already know the results</div>
+  </div>
+
+</div>
+</div>
+</section>
+<section id="why-preregister" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.1 Why preregister?</h2>
 <div class="fragment fade-in">
 <ul>
 <li>Enhances <strong>credibility</strong> by making your intentions transparent</li>
@@ -671,9 +824,8 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="can-i-still-explore-my-data">4.1 Can I still explore my data?</h3>
+<section id="can-i-still-explore-my-data" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.1 Can I still explore my data?</h2>
 <div class="fragment fade-in">
 <p>Absolutely! Preregistration doesn’t ban exploration; it just draws a clear line between <strong>confirmatory</strong> and <strong>exploratory</strong> analyses</p>
 </div>
@@ -688,10 +840,13 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="key-benefits-of-preregistration">4.2 Key Benefits of Preregistration</h3>
+<section id="key-benefits-of-preregistration" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">4.2 Key Benefits of Preregistration</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Effect</th>
@@ -701,34 +856,33 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <tbody>
 <tr class="odd">
 <td><strong>Transparency</strong></td>
-<td>Public hypotheses and plans [<a href="https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT">Toth et al., 2019</a>]</td>
+<td>Public hypotheses and plans <span style="font-size: 70%;"><span class="citation" data-cites="toth2019">(<a href="#/references" role="doc-biblioref" onclick="">Toth et al., 2019</a>)</span></span></td>
 </tr>
 <tr class="even">
 <td><strong>Less Bias</strong></td>
-<td>Encourages reporting of null results [<a href="https://doi.org/10.1111/add.15819">Marsden et al., 2022</a>]</td>
+<td>Encourages reporting of null results <span style="font-size: 70%;"><span class="citation" data-cites="marsden2022">(<a href="#/references" role="doc-biblioref" onclick="">Marsden et al., 2022</a>)</span></span></td>
 </tr>
 <tr class="odd">
 <td><strong>Clearer Claims</strong></td>
-<td>Exploratory ≠ confirmatory [<a href="https://doi.org/10.21428/1192f2f8.52d90db5">Dewitte et al., 2021</a>]</td>
+<td>Exploratory ≠ confirmatory <span style="font-size: 70%;"><span class="citation" data-cites="dewitte2021">(<a href="#/references" role="doc-biblioref" onclick="">Dewitte et al., 2021</a>)</span></span></td>
 </tr>
 <tr class="even">
 <td><strong>Better Quality</strong></td>
-<td>Plans include power, exclusion criteria, etc. [<a href="https://doi.org/10.1016/j.mbs.2022.108782">Ioannidis et al., 2022</a>]</td>
+<td>Plans include power, exclusion criteria, etc. <span style="font-size: 70%;"><span class="citation" data-cites="ioannidis20221">(<a href="#/references" role="doc-biblioref" onclick="">Ioannidis, 2022</a>)</span></span></td>
 </tr>
 <tr class="odd">
 <td><strong>Credibility</strong></td>
-<td>Deviations from the plan are explicit [<a href="https://doi.org/10.1038/s41386-022-01418-x">Waldron et al., 2022</a>]</td>
+<td>Deviations from the plan are explicit <span style="font-size: 70%;"><span class="citation" data-cites="waldron2022">(<a href="#/references" role="doc-biblioref" onclick="">Waldron &amp; Allen, 2022</a>)</span></span></td>
 </tr>
 <tr class="even">
 <td><strong>Easier Review</strong></td>
-<td>Reviewers can see the original plan [<a href="https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT">Toth et al., 2019</a>]</td>
+<td>Reviewers can see the original plan <span style="font-size: 70%;"><span class="citation" data-cites="toth2019">(<a href="#/references" role="doc-biblioref" onclick="">Toth et al., 2019</a>)</span></span></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section class="slide level2">
-
-<h3 id="how-does-it-work-in-practice">4.3 How does it work in practice?</h3>
+<section id="how-does-it-work-in-practice" class="slide level2">
+<h2>4.3 How does it work in practice?</h2>
 <div class="fragment fade-in">
 <ul>
 <li>Write your hypotheses, design, and analysis plan in a structured template (e.g. <strong>AsPredicted</strong>, or a full <strong>OSF</strong> template)</li>
@@ -755,15 +909,37 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
+<section id="limitations-considerations" class="slide level2">
+<h2>4.4 Limitations &amp; Considerations</h2>
+<div class="fragment fade-in">
+<ul>
+<li>Not a cure-all: vague preregistrations still allow bias <span class="citation" data-cites="waldron2022">(<a href="#/references" role="doc-biblioref" onclick="">Waldron &amp; Allen, 2022</a>)</span></li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Some concerns: added bureaucracy, misuse, or an overly rigid view of exploratory analysis <span class="citation" data-cites="toth2019">(<a href="#/references" role="doc-biblioref" onclick="">Toth et al., 2019</a>)</span></li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li>Not every research type benefits equally, but the practice is broadly beneficial <span class="citation" data-cites="dewitte2021">(<a href="#/references" role="doc-biblioref" onclick="">Dewitte et al., 2021</a>)</span></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="part-5-registered-reports" class="title-slide slide level1 center" data-background-color="#2c3e50">
+<h1>Part 5: Registered Reports</h1>
 
-<h3 class="center" data-background-color="#1A1A2E" id="preregistration-vs.-registered-reports">4.4 Preregistration vs.&nbsp;Registered Reports</h3>
+</section>
+<section id="preregistration-vs.-registered-reports" class="slide level2 center" data-background-color="#1A1A2E">
+<h2>Preregistration vs.&nbsp;<strong><em>Registered</em> Reports</strong></h2>
 <div style="font-size: 90%;">
-<p>This distinction trips people up constantly: here it is, side by side.</p>
+<p>The important (but confusing) distinction!</p>
 </div>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Preregistration</strong></p>
+<div class="column" style="width:55%;">
+<p>Preregistration</p>
 <div class="fragment fade-in">
 <ul>
 <li>You register your plan yourself</li>
@@ -784,8 +960,8 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <li>A record that keeps you honest and makes deviations visible</li>
 </ul>
 </div>
-</div><div class="column" style="width:50%;">
-<p><strong>Registered Reports</strong></p>
+</div><div class="column" style="width:45%;">
+<p><strong><em>Registered</em> Reports</strong></p>
 <div class="fragment fade-in">
 <ul>
 <li>The plan is <strong>peer-reviewed</strong> by a journal or platform</li>
@@ -801,89 +977,82 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <li>Publication is <strong>provisionally guaranteed</strong> if the plan is followed (in-principle acceptance)</li>
 </ul>
 </div>
-<div class="fragment fade-in">
-<ul>
-<li>A publishing <em>format</em>, built on top of preregistration</li>
-</ul>
-</div>
 </div></div>
 <div class="fragment fade-in">
 <p><span style="font-size: 80%;">Every Registered Report is preregistered. Not every preregistration becomes a Registered Report.</span></p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="limitations-considerations">4.5 Limitations &amp; Considerations</h3>
-<div class="fragment fade-in">
+<section id="how-registered-reports-differ-reiterated" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.1 How Registered Reports differ (reiterated)</h2>
 <ul>
-<li>Not a cure-all: vague preregistrations still allow bias [<a href="https://doi.org/10.1038/s41386-022-01418-x">Waldron et al., 2022</a>]</li>
-</ul>
-</div>
-<div class="fragment fade-in">
+<li class="fragment">Peer review happens <strong>before</strong> data collection, not after
 <ul>
-<li>Some concerns: added bureaucracy, misuse, or an overly rigid view of exploratory analysis [<a href="https://doi.org/10.5465/AMBPP.2019.17182ABSTRACT">Toth et al., 2019</a>]</li>
-</ul>
-</div>
-<div class="fragment fade-in">
+<li class="fragment">Because feedback arrives while there’s still time to act on it, designs tend to be <strong>stronger</strong></li>
+<li class="fragment">Reviewers become collaborators helping you improve the study, not judges evaluating a finished one (far less adversarial)</li>
+</ul></li>
+<li class="fragment">Acceptance is based on the <span class="is-accent">theoretical rationale and methods</span>, decided <strong>before</strong> anyone knows the results
 <ul>
-<li>Not every research type benefits equally, but the practice is broadly beneficial [<a href="https://doi.org/10.21428/1192f2f8.52d90db5">Dewitte et al., 2021</a>]</li>
+<li class="fragment">The filter that produces the 96% and the publication bias you saw earlier simply doesn’t exist here</li>
+</ul></li>
 </ul>
-</div>
-</section></section>
-<section>
-<section id="part-5-registered-reports" class="title-slide slide level1 center" data-background-color="#2c3e50">
-<h1>Part 5: Registered Reports</h1>
-
 </section>
-<section class="slide level2">
+<section id="the-registered-reports-pipeline" class="slide level2">
+<h2>5.2 The Registered Reports pipeline</h2>
+<div style="transform: scale(0.9); transform-origin: top center; margin: 10px 0 -35px 0;">
+<div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
 
-<h3 data-auto-animate="true" id="how-registered-reports-differ-reiterated">5.1 How Registered Reports differ (reiterated)</h3>
-<div class="fragment fade-in">
-<ul>
-<li>Peer review happens <strong>before</strong> data collection, not after</li>
-</ul>
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">STAGE 1</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:110px;">Plan study &amp;<br>write Intro/Methods</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:90px;">Submit</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:120px;">Peer review<br>↻ often several rounds</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:120px;">Refine method<br>with reviewers</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:999px; padding:10px 28px; text-align:center;">
+    <div style="font-weight:700; color:#fff;">In-Principle Acceptance (IPA)</div>
+    <div style="font-size:0.65em; color:#cfe4e9;">Sound plan → journal commits to publish</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">STAGE 2</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:130px;">Collect data &amp;<br>write Results/Discussion</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:110px;">Submit Stage 2</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:130px;">Review<br>(typically lighter)</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:999px; padding:10px 28px; text-align:center;">
+    <div style="font-weight:700; color:#fff;">Published</div>
+    <div style="font-size:0.65em; color:#cfe4e9;">Regardless of the results</div>
+  </div>
+
 </div>
-<div class="fragment fade-in">
-<ul>
-<li>If accepted in principle, publication is guaranteed regardless of the results</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<ul>
-<li>Because methods are peer-reviewed up front, designs tend to be <strong>stronger</strong></li>
-</ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="the-registered-reports-pipeline">5.2 The Registered Reports pipeline</h3>
-<div class="columns">
-<div class="column fragment fade-in" style="width:33%;">
-<p><strong>Stage 1</strong></p>
-<p>Submit introduction, hypotheses, and methods (<em>before</em> collecting data)</p>
-</div><div class="column fragment fade-in" style="width:33%;">
-<p><strong>In-Principle Acceptance (IPA)</strong></p>
-<p>Reviewers evaluate the <em>plan</em>. If sound, the journal commits to publish</p>
-</div><div class="column fragment fade-in" style="width:33%;">
-<p><strong>Stage 2</strong></p>
-<p>Collect the data, run the pre-registered analyses, and submit the full report</p>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="what-goes-into-a-stage-1-submission">5.3 What goes into a Stage 1 submission?</h3>
+<section id="what-goes-into-a-stage-1-submission" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.3 What goes into a Stage 1 submission?</h2>
 <div style="font-size: 90%;">
 <p>Almost every RR template (PCI RR included) asks you to fill in some version of the same <strong>design table</strong>. Everything in it is written <strong>before</strong> you collect a single data point.</p>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-design-table">5.3 The design table</h3>
+<section id="the-design-table" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.3 The design table</h2>
 <div style="font-size: 80%;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -909,34 +1078,31 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <td>The exact statistical test(s), and the criteria that would count as support or non-support</td>
 </tr>
 <tr class="odd">
-<td><strong>Rationale for the test’s sensitivity</strong></td>
-<td>Why this design and sample size are sensitive enough to actually detect the effect, if it exists</td>
-</tr>
-<tr class="even">
 <td><strong>Interpretation given different outcomes</strong></td>
 <td>What each possible result — supportive, non-supportive, ambiguous — would mean, decided <em>before</em> seeing the data</td>
-</tr>
-<tr class="odd">
-<td><strong>Theory that could be shown wrong</strong></td>
-<td>Which theoretical claim the outcomes could genuinely falsify — a real test needs a real chance of failing</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment fade-in" style="font-size: 85%;">
-<p>This is what reviewers evaluate at Stage 1: not whether the result will be “interesting”, but whether the plan is <strong>sound</strong> — and whether it could actually prove the theory wrong.</p>
+<p>This is what reviewers evaluate at Stage 1: not whether the result will be “interesting”, but whether the plan is <strong>sound</strong>.</p>
 </div>
 </section>
-<section class="slide level2">
+<section id="the-design-table-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.3 The design table</h2>
 
-<h3 data-auto-animate="true" id="the-design-table-as-pci-rr-asks-for-it">5.3 The design table, as PCI RR asks for it</h3>
-
-<img data-src="img/PCIRR-designtable.jpeg" style="width:100.0%" class="r-stretch"><p><span style="font-size: 50%;">Source: <a href="https://rr.peercommunityin.org">PCI Registered Reports</a> — Stage 1 submission template</span></p>
+<img data-src="img/nhb-table.png" class="r-stretch"><div class="fragment" style="font-size: 85%;">
+<p>From <a href="https://www.nature.com/nathumbehav/submission-guidelines/registeredreports">Nature Human Behaviour</a>.</p>
+</div>
 </section>
-<section class="slide level2">
-
-<h3 id="key-benefits">5.4 Key Benefits</h3>
+<section id="key-benefits" class="slide level2">
+<h2>5.4 Key Benefits</h2>
+<div style="font-size: 80%;">
 <table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Effect</th>
@@ -946,74 +1112,107 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <tbody>
 <tr class="odd">
 <td><strong>Reduces Publication Bias</strong></td>
-<td>Acceptance is based on design, not results [<a href="https://doi.org/10.1038/s41562-021-01193-7">Chambers &amp; Tzavella, 2021</a>]</td>
+<td>Acceptance is based on design, not results <span class="citation" data-cites="chambersPresentFutureRegistered2022">(<a href="#/references" role="doc-biblioref" onclick="">Chambers &amp; Tzavella, 2022</a>)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Methodological Rigour</strong></td>
-<td>Early peer review strengthens design and analysis plans [<a href="https://doi.org/10.1038/s41562-021-01142-4">Soderberg et al., 2021</a>]</td>
+<td>Early peer review strengthens design and analysis plans [</td>
 </tr>
 <tr class="odd">
 <td><strong>Transparency</strong></td>
-<td>Protocols are pre-specified and openly available [<a href="https://doi.org/10.1027/1864-9335/A000192">Nosek et al., 2014</a>]</td>
+<td>Protocols are pre-specified and openly available <span class="citation" data-cites="nosekRegisteredReportsMethod2014">(<a href="#/references" role="doc-biblioref" onclick="">Nosek &amp; Lakens, 2014</a>)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Reduces Questionable Practices</strong></td>
-<td>Limits p-hacking and HARKing [<a href="https://doi.org/10.1080/2833373x.2024.2376046">Lakens et al., 2024</a>]</td>
+<td>Limits p-hacking and HARKing <span class="citation" data-cites="lakensBenefitsPreregistrationRegistered2024">(<a href="#/references" role="doc-biblioref" onclick="">Lakens et al., 2024</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Constructive Early Feedback</strong></td>
-<td>Expert input on design <em>before</em> data collection [<a href="https://doi.org/10.1016/j.tins.2019.07.003">Kiyonaga et al., 2019</a>]</td>
+<td>Expert input on design <em>before</em> data collection <span class="citation" data-cites="kiyonagaPracticalConsiderationsNavigating2019">(<a href="#/references" role="doc-biblioref" onclick="">Kiyonaga &amp; Scimeca, 2019</a>)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Values Null Results</strong></td>
-<td>Studies are published regardless of outcome [<a href="https://doi.org/10.1038/s41562-021-01193-7">Chambers et al., 2020</a>]</td>
+<td>Studies are published regardless of outcome <span class="citation" data-cites="chambersPresentFutureRegistered2022">(@ <a href="#/references" role="doc-biblioref" onclick="">Chambers &amp; Tzavella, 2022</a>)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-pci-rr-model">5.5 The PCI RR model</h3>
+<section id="the-pci-rr-model" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.5 The PCI RR model</h2>
 
 <img data-src="img/pci-rr-logo.png" style="width:70.0%" class="r-stretch"></section>
-<section class="slide level2">
-
-<h3 data-auto-animate="true" id="the-pci-rr-model-1">5.5 The PCI RR model</h3>
+<section id="the-pci-rr-model-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.5 The PCI RR model</h2>
 <div style="font-size: 75%;">
 <p><strong>Peer Community In Registered Reports (PCI RR)</strong> is a free, non-profit platform for reviewing and recommending Registered Reports.</p>
 </div>
-<div class="fragment fade-in" style="font-size: 75%;">
-<ul>
-<li>Authors submit a Stage 1 manuscript → receive peer review → upon <strong>in-principle acceptance</strong>, they can:</li>
-</ul>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div style="transform: scale(0.60); transform-origin: top center; margin: 10px 0 -50px 0;">
+<div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">STAGE 1</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:150px;">Submit Stage 1<br>manuscript</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:150px;">Open peer review<br>on the platform</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:999px; padding:10px 28px; text-align:center;">
+    <div style="font-weight:700; color:#fff;">In-principle recommendation</div>
+    <div style="font-size:0.65em; color:#cfe4e9;">Sound plan → commitment to review Stage 2</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:10px; border:2px dashed #9CA3AF; border-radius:12px; padding:16px 20px;">
+    <div style="font-size:0.65em; font-weight:700; color:#6B7280; writing-mode:vertical-rl; text-orientation:mixed; margin-right:4px;">STAGE 2</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:150px;">Collect data &amp; write<br>full report</div>
+    <div style="color:#9CA3AF;">→</div>
+    <div style="background:#f3f4f6; border:1px solid #d1d5db; border-radius:6px; padding:8px 12px; text-align:center; font-size:0.75em; min-width:150px;">Open peer review<br>of the full report</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:999px; padding:10px 28px; text-align:center;">
+    <div style="font-weight:700; color:#fff;">Final recommendation</div>
+    <div style="font-size:0.65em; color:#cfe4e9;">Free &amp; citable — this is where publication is decided</div>
+  </div>
+
+  <div class="fragment fade-in" style="font-size:1.4em; color:#13718c;">↓</div>
+
+  <div class="fragment fade-in" style="display:flex; align-items:center; gap:14px;">
+    <div style="background:#fff; border:2px solid #13718c; border-radius:10px; padding:10px 16px; text-align:center; font-size:0.75em; min-width:170px;">
+      <div style="font-weight:700; color:#13718c;">Publish Stage 2</div>
+      <div style="color:#6B7280; margin-top:3px;">in 100+ PCI RR-friendly journals</div>
+    </div>
+    <div style="color:#9CA3AF; font-size:0.8em; font-style:italic;">or</div>
+    <div style="background:#fff; border:2px solid #13718c; border-radius:10px; padding:10px 16px; text-align:center; font-size:0.75em; min-width:170px;">
+      <div style="font-weight:700; color:#13718c;">Use the recommendation itself</div>
+      <div style="color:#6B7280; margin-top:3px;">free &amp; citable, no journal needed</div>
+    </div>
+  </div>
+
 </div>
-<div class="fragment fade-in" style="font-size: 75%;">
-<ul>
-<li>Publish the Stage 2 report in any of <strong>100+ PCI RR-friendly journals</strong>, or</li>
-</ul>
 </div>
-<div class="fragment fade-in" style="font-size: 75%;">
+</div><div class="column" style="width:40%;">
 <ul>
-<li>Simply use the PCI RR recommendation itself (free and citable)</li>
+<li class="fragment">Journal-agnostic, more control over where you publish, and fully transparent, open peer review throughout.</li>
+<li class="fragment">Or publish directly through <a href="https://peercommunityjournal.org/">Peer Community Journal</a>, PCI RR’s own free, diamond-OA journal<br>
+<img data-src="img/pcj.png"></li>
 </ul>
-</div>
-<div class="fragment fade-in" style="font-size: 75%;">
-<ul>
-<li>Ideal if you want a <strong>journal-agnostic</strong> process, more control over where you publish, and fully <strong>transparent, open peer review</strong></li>
-</ul>
-</div>
+</div></div>
 </section>
-<section class="slide level2">
+<section id="the-design-table-as-pci-rr-asks-for-it" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.5 The design table, as PCI RR asks for it</h2>
 
-<h3 data-auto-animate="true" id="the-pci-rr-model-the-full-process">5.5 The PCI RR model — the full process</h3>
-
-<img data-src="img/PCIRR-process.jpeg" style="width:95.0%" class="r-stretch"><div style="font-size: 60%;">
-<p>Note the two checkpoints where a submission can fail to advance (Stage 1 and Stage 2 criteria) — peer review is real, not a formality. Once recommended, the preprint is a valid, citable output on its own, even before (or instead of) journal submission.</p>
-</div>
+<img data-src="img/PCIRR-designtable.jpeg" style="width:100.0%" class="r-stretch"><p><span style="font-size: 50%;">Source: <a href="https://rr.peercommunityin.org">PCI Registered Reports</a> — Stage 1 submission template</span></p>
 </section>
-<section class="slide level2">
-
-<h3 id="why-this-is-especially-valuable-for-grad-students">5.6 Why this is especially valuable for grad students</h3>
+<section id="why-this-is-especially-valuable-for-grad-students" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.6 Why this is especially valuable for grad students</h2>
 <div class="fragment fade-in">
 <ul>
 <li><strong>No article processing charge (APC)</strong> through the PCI RR recommendation route</li>
@@ -1035,9 +1234,8 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="real-world-adoption">5.7 Real-World Adoption</h3>
+<section id="real-world-adoption" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.7 Real-World Adoption</h2>
 <div class="fragment fade-in">
 <ul>
 <li>✅ Over <strong>300 journals</strong> now offer Registered Reports</li>
@@ -1058,22 +1256,21 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <li>🌍 PCI RR offers a global, open-access alternative to journal-based review</li>
 </ul>
 </div>
-<p><span style="font-size: 60%;">Sources: cos.io, PCI RR, <a href="https://doi.org/10.1038/s41562-021-01193-7">Chambers &amp; Tzavella, 2021</a></span></p>
+<p><span style="font-size: 60%;">Sources: cos.io, PCI RR, <span class="citation" data-cites="chambersPresentFutureRegistered2022">(<a href="#/references" role="doc-biblioref" onclick="">Chambers &amp; Tzavella, 2022</a>)</span></span></p>
 </section>
-<section class="slide level2">
-
-<h3 id="real-world-adoption-the-effect-on-the-record">5.7 Real-World Adoption: the effect on the record</h3>
+<section id="real-world-adoption-the-effect-on-the-record" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.7 Real-World Adoption: the effect on the record</h2>
 <div class="columns">
-<div class="column fragment fade-in" style="width:50%;">
-<p><img data-src="img/rr-effect-1.png" width="400"></p>
-</div><div class="column fragment fade-in" style="width:50%;">
-<p><img data-src="img/rr-effect-2.png" width="400"><br>
-<span style="font-size: 50%;"><a href="https://doi.org/10.1177/25152459211007467">Scheel et al., 2021</a></span></p>
+<div class="column fragment fade-in" style="text-align: center;">
+<p><img data-src="img/rr-effect-1.png" width="450"><br>
+<span style="font-size: 50%;"><span class="citation" data-cites="allenOpenScienceChallenges2019">(<a href="#/references" role="doc-biblioref" onclick="">Allen &amp; Mehler, 2019</a>)</span></span></p>
+</div><div class="column fragment fade-in" style="text-align: center;">
+<p><img data-src="img/rr-effect-2.png" width="450"><br>
+<span style="font-size: 50%"><span class="citation" data-cites="scheelExcessPositiveResults2021">(<a href="#/references" role="doc-biblioref" onclick="">Scheel et al., 2021</a>)</span></span></p>
 </div></div>
 </section>
-<section class="slide level2">
-
-<h3 id="are-registered-reports-always-appropriate">5.8 Are Registered Reports Always Appropriate?</h3>
+<section id="are-registered-reports-always-appropriate" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.8 Are Registered Reports Always Appropriate?</h2>
 <div class="fragment fade-in">
 <ul>
 <li>Not ideal for purely <strong>exploratory</strong> or <strong>rapid-response</strong> studies</li>
@@ -1090,12 +1287,11 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="what-if-i-already-have-some-data">5.9 What if I already have some data?</h3>
+<section id="what-if-i-already-have-some-data" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.9 What if I already have some data?</h2>
 <div class="fragment fade-in">
 <ul>
-<li>PCI RR recognises a range of <strong>bias-control levels</strong>, not just brand-new data — secondary analyses of existing data are still eligible</li>
+<li>PCI RR recognises a range of <strong>bias-control levels</strong>, not just brand-new data. Secondary analyses of existing data are still eligible</li>
 </ul>
 </div>
 <div class="fragment fade-in">
@@ -1109,20 +1305,20 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="levels-of-bias-control-recognised-by-pci-rr">5.9 Levels of bias control recognised by PCI RR</h3>
-
-<img data-src="img/bias_control_taxon.jpeg" style="width:85.0%" class="r-stretch"><p><span style="font-size: 50%;">Source: <a href="https://rr.peercommunityin.org">PCI Registered Reports</a> — for reference when you’re ready to submit</span></p>
+<section id="levels-of-bias-control-recognised-by-pci-rr" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.9 Levels of bias control recognised by PCI RR</h2>
+<div class="fragment" style="text-align: center;">
+<p><a href="img/bias_control_taxon.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="img/bias_control_taxon.jpeg" style="width:50.0%"></a><br>
+<span style="font-size: 50%;">Source: <a href="https://rr.peercommunityin.org">PCI Registered Reports</a> — for reference when you’re ready to submit</span></p>
+</div>
 </section></section>
 <section>
 <section id="closing-how-to-start" class="title-slide slide level1 center" data-background-color="#2c3e50">
 <h1>Closing: How to Start</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 id="practical-first-steps">Practical First Steps</h3>
+<section id="practical-first-steps" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Practical First Steps</h2>
 <div class="fragment fade-in">
 <ol type="1">
 <li>Pick a study you’re planning that tests a clear hypothesis</li>
@@ -1149,9 +1345,8 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </ol>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="key-resources">Key Resources</h3>
+<section id="key-resources" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Key Resources</h2>
 <p><img src="img/osf-logo.png" height="80">&nbsp;&nbsp;&nbsp;<img src="img/pci-rr-logo.png" height="80"></p>
 <ul>
 <li><strong>OSF Registries</strong>: <a href="https://osf.io/registries" class="uri">https://osf.io/registries</a></li>
@@ -1159,14 +1354,64 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 <li><strong>Center for Open Science</strong>: <a href="https://www.cos.io" class="uri">https://www.cos.io</a></li>
 </ul>
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+<section id="summary" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Summary</h2>
 <ul>
-<li>Many threats to replicability are <strong>systemic, but solvable</strong></li>
-<li><strong>Preregistration</strong> helps you plan better, interpret results honestly, and build credibility</li>
-<li><strong>Registered Reports</strong> realign incentives and put peer review where it can do the most good: before the data exist</li>
-<li>Tools like OSF and PCI RR make both accessible and free</li>
+<li class="fragment">Many threats to replicability are <strong>systemic, but solvable</strong></li>
+<li class="fragment"><strong>Preregistration</strong> helps you plan better, interpret results honestly, and build credibility</li>
+<li class="fragment"><strong>Registered Reports</strong> realign incentives and put peer review where it can do the most good: before the data exist</li>
+<li class="fragment">Tools like OSF and PCI RR make both accessible and free</li>
 </ul>
+</section>
+<section id="summary-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Summary</h2>
+
+<img data-src="img/cheems.jpg" class="r-stretch"></section>
+<section id="take-home-message" class="slide level2">
+<h2>Take-Home Message</h2>
+<div style="display:flex; align-items:center; gap:24px; margin:20px 0; justify-content:center;">
+
+  <div style="display:flex; flex-direction:column; gap:14px;">
+
+    <div class="fragment fade-in" style="display:flex; align-items:center; gap:14px; max-width:480px;">
+      <div style="background:#13718c; color:#fff; border-radius:50%; width:36px; height:36px; min-width:36px; display:flex; align-items:center; justify-content:center; font-weight:700;">1</div>
+      <div>
+        <div style="font-weight:700; font-size:0.95em; color:#13718c;">Avoid bias — plan ahead</div>
+        <div style="font-size:0.7em; color:#374151;">Preregister your study, or better, register your report</div>
+      </div>
+    </div>
+
+    <div class="fragment fade-in" style="display:flex; align-items:center; gap:14px; max-width:480px;">
+      <div style="background:#13718c; color:#fff; border-radius:50%; width:36px; height:36px; min-width:36px; display:flex; align-items:center; justify-content:center; font-weight:700;">2</div>
+      <div>
+        <div style="font-weight:700; font-size:0.95em; color:#13718c;">Don't widen the gap</div>
+        <div style="font-size:0.7em; color:#374151;">Publish Green or Diamond OA when you can (your limited research funds have better uses than an APC)</div>
+      </div>
+    </div>
+
+    <div class="fragment fade-in" style="display:flex; align-items:center; gap:14px; max-width:480px;">
+      <div style="background:#13718c; color:#fff; border-radius:50%; width:36px; height:36px; min-width:36px; display:flex; align-items:center; justify-content:center; font-weight:700;">3</div>
+      <div>
+        <div style="font-weight:700; font-size:0.95em; color:#13718c;">Go further when you can</div>
+        <div style="font-size:0.7em; color:#374151;">Registered Reports &gt; Preregistration &gt; traditional publishing — each step addresses more of what you saw today</div>
+        <img src="img/cheems.jpg" style="width:100%; height:auto; margin-top:6px;">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fragment fade-in" style="font-size:2em; color:#13718c;">→</div>
+
+  <div class="fragment fade-in" style="background:#13718c; border-radius:16px; padding:24px 28px; text-align:center; max-width:280px;">
+    <div style="font-size:1.15em; font-weight:700; color:#fff; line-height:1.35;">
+      Registered Reports + Green or Diamond OA
+    </div>
+    <div style="font-size:0.75em; color:#e6f0f2; margin-top:8px; line-height:1.4;">
+      Do this, and you're tackling nearly every problem in this talk — while doing better research along the way
+    </div>
+  </div>
+
+</div>
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>
@@ -1180,7 +1425,63 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
 </div><div class="column" style="width:50%;">
 <p><br><br><strong>Juan David Leongómez</strong> <span style="font-size: 50%;">PhD, MSc</span><br> <a href="mailto:jleongomez@unbosque.edu.co" style="font-size: 70%;">jleongomez@unbosque.edu.co</a></p>
 </div></div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-allenOpenScienceChallenges2019" class="csl-entry" role="listitem">
+Allen, C., &amp; Mehler, D. M. A. (2019). Open science challenges, benefits and tips in early career and beyond. <em>PLOS Biology</em>, <em>17</em>(5), e3000246. <a href="https://doi.org/10.1371/journal.pbio.3000246">https://doi.org/10.1371/journal.pbio.3000246</a>
+</div>
+<div id="ref-bakkerRulesGameCalled2012" class="csl-entry" role="listitem">
+<span class="nocase">Bakker, M., van Dijk, A., &amp; Wicherts, J. M.</span> (2012). The <span>Rules</span> of the <span>Game Called Psychological Science</span>. <em>Perspectives on Psychological Science</em>, <em>7</em>(6), 543–554. <a href="https://doi.org/10.1177/1745691612459060">https://doi.org/10.1177/1745691612459060</a>
+</div>
+<div id="ref-brzezinskiCredibilityCrisisPsychology2023" class="csl-entry" role="listitem">
+Brzeziński, J. M. (2023). A <span>Credibility Crisis</span> in <span>Psychology</span>? <em>Przegląd Psychologiczny</em>, <em>66</em>(1), 145–164. <a href="https://doi.org/10.31648/przegldpsychologiczny.9680">https://doi.org/10.31648/przegldpsychologiczny.9680</a>
+</div>
+<div id="ref-chambersPresentFutureRegistered2022" class="csl-entry" role="listitem">
+Chambers, C. D., &amp; Tzavella, L. (2022). The past, present and future of <span>Registered Reports</span>. <em>Nature Human Behaviour</em>, <em>6</em>(1), 29–42. <a href="https://doi.org/10.1038/s41562-021-01193-7">https://doi.org/10.1038/s41562-021-01193-7</a>
+</div>
+<div id="ref-dewitte2021" class="csl-entry" role="listitem">
+Dewitte, L., Schellekens, T., Appel, J., &amp; Dezutter, J. (2021). Harnessing the benefits of pre-registration for non-experimental studies: Personal experience and examples from psychological research. <em>Proceedings 2021</em>.
+</div>
+<div id="ref-Henrich2010" class="csl-entry" role="listitem">
+Henrich, J., Heine, S. J., &amp; Norenzayan, A. (2010). The weirdest people in the world? <em>Behavioral and Brain Sciences</em>, <em>33</em>(2-3), 61–83. <a href="https://doi.org/10.1017/S0140525X0999152X">https://doi.org/10.1017/S0140525X0999152X</a>
+</div>
+<div id="ref-hermeslima2007" class="csl-entry" role="listitem">
+Hermes-Lima, M., Santos, N. C., Alencastro, A. C. R., &amp; Ferreira, S. (2007). Whither <span>L</span>atin <span>A</span>merica? Trends and challenges of science in <span>L</span>atin <span>A</span>merica. <em>IUBMB Life</em>, <em>59</em>. <a href="https://doi.org/10.1080/15216540701258751">https://doi.org/10.1080/15216540701258751</a>
+</div>
+<div id="ref-hidalgo2020" class="csl-entry" role="listitem">
+Hidalgo, C. (2020). <em>Physiology in <span>L</span>atin <span>A</span>merica: A critical view</em>.
+</div>
+<div id="ref-ioannidis20221" class="csl-entry" role="listitem">
+Ioannidis, J. P. A. (2022). Pre-registration of mathematical models. <em>Mathematical Biosciences</em>, <em>345</em>, 108782. https://doi.org/<a href="https://doi.org/10.1016/j.mbs.2022.108782">https://doi.org/10.1016/j.mbs.2022.108782</a>
+</div>
+<div id="ref-kiyonagaPracticalConsiderationsNavigating2019" class="csl-entry" role="listitem">
+Kiyonaga, A., &amp; Scimeca, J. M. (2019). Practical <span>Considerations</span> for <span>Navigating Registered Reports</span>. <em>Trends in Neurosciences</em>, <em>42</em>(9), 568–572. <a href="https://doi.org/10.1016/j.tins.2019.07.003">https://doi.org/10.1016/j.tins.2019.07.003</a>
+</div>
+<div id="ref-lakensBenefitsPreregistrationRegistered2024" class="csl-entry" role="listitem">
+Lakens, D., Mesquida, C., Rasti, S., &amp; Ditroilo, M. (2024). The benefits of preregistration and <span>Registered Reports</span>. <em>Evidence-Based Toxicology</em>, <em>2</em>(1), 2376046. <a href="https://doi.org/10.1080/2833373X.2024.2376046">https://doi.org/10.1080/2833373X.2024.2376046</a>
+</div>
+<div id="ref-marsden2022" class="csl-entry" role="listitem">
+Marsden, J., Cousijn, J., &amp; Stapleton, J. (2022). Pre-registration: Not a daunting practice. <em>Addiction</em>, <em>117</em>(4), 845–846. https://doi.org/<a href="https://doi.org/10.1111/add.15819">https://doi.org/10.1111/add.15819</a>
+</div>
+<div id="ref-nosekRegisteredReportsMethod2014" class="csl-entry" role="listitem">
+Nosek, B. A., &amp; Lakens, D. (2014). Registered <span>Reports</span>: <span>A Method</span> to <span>Increase</span> the <span>Credibility</span> of <span>Published Results</span>. <em>Social Psychology</em>, <em>45</em>(3), 137–141. <a href="https://doi.org/10.1027/1864-9335/a000192">https://doi.org/10.1027/1864-9335/a000192</a>
+</div>
+<div id="ref-scheelExcessPositiveResults2021" class="csl-entry" role="listitem">
+Scheel, A. M., Schijen, M. R. M. J., &amp; Lakens, D. (2021). An <span>Excess</span> of <span>Positive Results</span>: <span>Comparing</span> the <span>Standard Psychology Literature With Registered Reports</span>. <em>Advances in Methods and Practices in Psychological Science</em>, <em>4</em>(2), 25152459211007467. <a href="https://doi.org/10.1177/25152459211007467">https://doi.org/10.1177/25152459211007467</a>
+</div>
+<div id="ref-toth2019" class="csl-entry" role="listitem">
+Toth, A., Banks, G., Mellor, D., O’Boyle, E., Dickson, A., Davis, D. J., DeHaven, A., Bochantin, J., &amp; Borns, J. (2019). An evaluation of the effectiveness of study pre-registration: Best practice recommendations. <em>Academy of Management Proceedings</em>, <em>2019</em>(1), 17182. <a href="https://doi.org/10.5465/AMBPP.2019.17182abstract">https://doi.org/10.5465/AMBPP.2019.17182abstract</a>
+</div>
+<div id="ref-waldron2022" class="csl-entry" role="listitem">
+Waldron, S., &amp; Allen, C. (2022). Not all pre-registrations are equal. <em>Neuropsychopharmacology</em>, <em>47</em>(13), 2181–2183. <a href="https://doi.org/10.1038/s41386-022-01418-x">https://doi.org/10.1038/s41386-022-01418-x</a>
+</div>
+<div id="ref-siggap2021" class="csl-entry" role="listitem">
+Zwet, E. W. van, &amp; Cator, E. A. (2021). The significance filter, the winner’s curse and the need to shrink. <em>Statistica Neerlandica</em>, <em>75</em>(4), 437–452. https://doi.org/<a href="https://doi.org/10.1111/stan.12241">https://doi.org/10.1111/stan.12241</a>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -1566,6 +1867,38 @@ It just moves it from <span class="is-accent">the reader</span> to <span class="
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
