@@ -1,0 +1,40 @@
+---
+title: "UnB 2026"
+lang: en-GB
+format:
+  html:
+    page-layout: full
+    css: styles/landing.css
+    title-block-banner: false
+---
+
+::: {.landing}
+
+# UnB 2026
+
+Slides for the **Opening Lecture & Conference**, Graduate Program in Behavioural Sciences,
+Institute of Psychology, University of Brasília (UnB).
+
+::: {.deck-list}
+
+::: {.deck}
+### [Open Science and Reproducibility](open-science/)
+
+*From the replication crisis to Registered Reports*
+
+10 August 2026
+:::
+
+::: {.deck}
+### [Statistical Inference](statistical-inference/)
+
+*Three frameworks to answer a question*
+
+11 August 2026
+:::
+
+:::
+
+<p class="author">Juan David Leongómez, PhD, MSc — <a href="https://jdleongomez.info/en/">jdleongomez.info</a></p>
+
+:::

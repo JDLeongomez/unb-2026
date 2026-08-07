@@ -2,6 +2,7 @@ project:
   type: default
   output-dir: _site
   render:
+    - index.qmd
     - open-science/index.qmd
     - statistical-inference/index.qmd
 

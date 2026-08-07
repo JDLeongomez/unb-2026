@@ -1,4 +1,6 @@
 .quarto/
+/index.html
+/index_files/
 /open-science/index.html
 /open-science/index_files/
 /statistical-inference/index.html
