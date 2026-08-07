@@ -25,32 +25,71 @@
   border-radius: 999px;
   background: rgba(19, 113, 140, 0.12);
   border: 1px solid #13718c;
-  font-size: 0.8em;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+/* Chip: amenaza que se profundiza a continuación */
+.chip-next {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.2em;
+  border-radius: 999px;
+  background: #13718c;
+  border: 1px solid #0c0c0c;
+  color: #e3eaf7;
+  font-weight: 600;
+  font-size: 1em;
+  white-space: nowrap;
+}
+/* Chip: amenaza que ya se cubrió antes en la charla */
+.chip-covered {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.2em;
+  border-radius: 999px;
+  background: #020e11;
+  border: 1px solid #020202;
+  color: #dfe3f1;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+/* Chip: amenaza que ya se cubrió antes en la charla */
+.chip-important {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.2em;
+  border-radius: 999px;
+  background: #c76037;
+  border: 1px solid #020202;
+  color: #000000;
+  font-size: 1em;
   white-space: nowrap;
 }
 
 /* Slide "poster": una frase grande, centrada, sin nada más alrededor */
 .poster {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
     text-align: center;
 }
 
 .poster .overline {
-    font-size: 0.9em;
+    font-size: 1.5em;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #aaaaaa;
-    margin-bottom: 0.5em;
+    color: #272727;
 }
 
 .poster .title {
-    font-size: 2.2em;
+    font-size: 1.5em;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 /* ── Links en diapositivas ──────────────────────────────── */
@@ -63,4 +102,48 @@
 .reveal a:hover {
   color: #374151;
   text-decoration-color: #374151;
+}
+
+/* ── Tablas ─────────────────────────────────────────────── */
+.reveal table {
+    font-size: 0.9em;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 0.6em auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.reveal table thead th {
+    background-color: #13718c;
+    color: #ffffff;
+    padding: 0.6em 1em;
+    font-weight: 600;
+    text-align: left;
+}
+
+.reveal table tbody td {
+    padding: 0.6em 1em;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.reveal table tbody tr:nth-child(even) td {
+    background-color: rgba(19, 113, 140, 0.06);
+}
+
+.reveal table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Slide de referencias ───────────────────────────────── */
+#refs {
+    font-size: 0.6em;
+    column-count: 2;
+    column-gap: 2em;
+}
+
+#refs .csl-entry {
+    margin-bottom: 1em;
+    break-inside: avoid;
 }

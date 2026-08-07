@@ -10,6 +10,7 @@ lang: en-GB
 format:
   revealjs:
     theme: simple
+    lightbox: true
     embed-resources: true
     slide-number: true
     show-slide-number: all
